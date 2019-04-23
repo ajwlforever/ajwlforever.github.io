@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="虞启贤">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="JQuery的学习--1">
+  <meta property="og:description" content="虞启贤">
+  <meta property="og:site_name" content="虞启贤">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="www.yqxblog.top">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>虞启贤</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">JQuery的学习--1</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  目录
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/ajwlforever">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:2353350597@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/">
+                  
+                  rss
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 虞启贤</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-23</span>
+            <span class="time">23:28:21</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/JQuery/">JQuery</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/JQuery/">#JQuery</a> <a class="tag" href="/tags/html/">#html</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+            入口函数，核心函数，静态与实例 <a id="more"></a>
+<p>一、Jquery入口函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(</span><br><span class="line">function()&#123;</span><br><span class="line"> var $img = $(&quot;img&quot;)[0];</span><br><span class="line"> console.log($img);</span><br><span class="line"> var width = $img.width;</span><br><span class="line"> console.log(width);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">普通JS</span><br><span class="line">window.onload = function(ev)</span><br><span class="line">&#123;</span><br><span class="line">var img = document.getElementByTagName(&quot;img&quot;)[0];</span><br><span class="line"> console.log($img);</span><br><span class="line">  var width = img.width;</span><br><span class="line"> console.log(width)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>1.原生的js会等到DOM元素加载完毕并等到图片之后才加载，二JQuery会等到DOm元素加载完，但不会等到图片也加载完。<br>2.原生的js入口函数会覆盖，JQuery的入口函数不会覆盖；</p>
+<p>JQuery的其他入口函数写法<br>1.$(document).ready(function(){}）；<br>2.jQuery(document).ready(function(){}）；<br>3.$(function(){}）；  //最主要还是用这种方法！<br>4.jQuery(function(){}）；</p>
+<p>二、jQuery的冲突问题<br>$符号在jquery种使用，当在html种引用了别的框架也使用了这个符号的时候就会出现冲突问题；<br>一般后引入的框架会覆盖之前引入的框架;</p>
+<p>解决方法：<br>1.释放$的使用权 jQuery.noConflict(); 用jQuery；释放操作在jQuery代码之前编写。<br>2.自定义访问符号 var nc=jQuery.noConflict()；nc(function(){}）；</p>
+<p>三、jQuery的核心函数<br>$();就代表调用jQuery的核心函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.接受一个函数 </span><br><span class="line">$(fuction()&#123;&#125;);</span><br><span class="line">2.接受一个字符串</span><br><span class="line">2.1接受一个个字符串选择器</span><br><span class="line">var $box1 = $(&quot;.box&quot;); //classdiv</span><br><span class="line">var $box2 = $(&quot;#box&quot;); //iddiv</span><br><span class="line">console($box1);</span><br><span class="line">console($box2);</span><br><span class="line">2.2接受一个代码片段</span><br><span class="line">var $p = $(&quot;&lt;p&gt;我是锻炼罗&lt;/p&gt;);</span><br><span class="line">console.log($p);</span><br><span class="line">$box1.append($p);</span><br><span class="line">3.接受一个DOM元素 //会被包装成一个jQuery对象</span><br><span class="line">var img = document.getElementByTagName(&quot;img&quot;)[0];</span><br><span class="line">var $i = $(img);</span><br><span class="line">console.long($i);</span><br></pre></td></tr></table></figure></p>
+<p>四、jQuery对象<br>本质上是一个伪数组。<br>var $div = $(“div”);</p>
+<p>五、静态方法和实例方法<br>静态方法：<br>//1.定义一个类<br>function Aclass(){}<br>//2.给这个类添加一个静态方法<br>Aclass.staticMethod = function(){alert(“staticMethod”);}<br>//3.调用<br>AClass.staticMehod();</p>
+<p>实例方法：<br>//1.给这和类添加一个实例方法<br>Aclass.prototype.instanceMethod = function(){alert(“InstanceMethod();}<br>//2.创建一个实例（对象）<br>var a = new Aclass():<br>//3.调用<br>a.instanceMethod();</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

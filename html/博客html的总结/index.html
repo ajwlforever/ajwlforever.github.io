@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="虞启贤">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="html+css写简单博客界面的总结">
+  <meta property="og:description" content="虞启贤">
+  <meta property="og:site_name" content="虞启贤">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="www.yqxblog.top">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>虞启贤</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">html+css写简单博客界面的总结</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  目录
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/ajwlforever">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:2353350597@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/">
+                  
+                  rss
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 虞启贤</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-04</span>
+            <span class="time">23:28:21</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/html/">html</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/html/">#html</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+           过放荡不羁的生活，容易得像顺水推舟，但是要结识良朋益友，却难如登天。 —— 巴尔扎克 <a id="more"></a>
+<ol>
+<li>transition<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div</span><br><span class="line">&#123;</span><br><span class="line">width:100px;</span><br><span class="line">transition: width 2s;</span><br><span class="line">-moz-transition: width 2s; /* Firefox 4 */</span><br><span class="line">-webkit-transition: width 2s; /* Safari 和 Chrome */</span><br><span class="line">-o-transition: width 2s; /* Opera */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>tansition 属性是一个简写熟悉<br>四个过度属性：property、duration、timing-function、delay；</p>
+<p>2.opacity<br>透明度，0-1之间，0是透明<br>3.font-weight<br>设置文本的粗细，数值。</p>
+<p>4.text-shadow<br>text-shadow: h-shadow v-shadow blur color;<br>水平阴影位置、垂直、模糊的距离、阴影的颜色。</p>
+<p>5.border-collapse<br>border-collapse 属性设置表格的边框是否被合并为一个单一的边框，还是象在标准的 HTML 中那样分开显示。<br>separate：分开<br>collapse：合并<br>inherit：继承父元素</p>
+<p>6.position<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">h2</span><br><span class="line">  &#123;</span><br><span class="line">  position:absolute;</span><br><span class="line">  left:100px;</span><br><span class="line">  top:150px;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure><br>  position 属性规定元素的定位类型。<br>  这个属性定义建立元素布局所用的定位机制。任何元素都可以定位，不过绝对或固定元素会生成一个块级框，而不论该元素本身是什么类型。相对定位元素会相对于它在正常流中的默认位置偏移。</p>
+<p>absolute<br>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</p>
+<p>fixed<br>生成绝对定位的元素，相对于浏览器窗口进行定位。<br>元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</p>
+<p>relative<br>生成相对定位的元素，相对于其正常位置进行定位。<br>因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。<br>static    默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。<br>inherit    规定应该从父元素继承 position 属性的值。<br>7.max-width<br>该属性值会对元素的宽度设置一个最高限制。因此，元素可以比指定值窄，但不能比其宽。不允许指定负值。<br>8.display<br>//display元素详解<br><img src="/20190404141825240/20190404022421830.png" alt><br>9.left top right bottom<br>left：该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。<br>其他的依次类推.<br>10.鼠标移上去显示全部文本<br> white-space: nowrap;<br>display: inline-block;<br> text-overflow:ellipsis;<br> hover：white-space: normal;</p>
+<ol start="11">
+<li>Div分块把每一个元素一层层分开。<br>css文件的开头尽量直接将整将整个html文档的大体约束一下。</li>
+</ol>
+<p>像是body元素<br><figure class="highlight plain"><figcaption><span>body元素</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">body:before,</span><br><span class="line">body:after &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: table;</span><br><span class="line">&#125;</span><br><span class="line">body:after &#123;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">html,</span><br><span class="line">body,</span><br><span class="line">div,</span><br><span class="line">span,</span><br><span class="line">applet,</span><br><span class="line">object,</span><br><span class="line">iframe,</span><br><span class="line">h1,</span><br><span class="line">h2,</span><br><span class="line">h3,</span><br><span class="line">h4,</span><br><span class="line">h5,</span><br><span class="line">h6,</span><br><span class="line">p,</span><br><span class="line">blockquote,</span><br><span class="line">pre,</span><br><span class="line">a,</span><br><span class="line">abbr,</span><br><span class="line">acronym,</span><br><span class="line">address,</span><br><span class="line">big,</span><br><span class="line">cite,</span><br><span class="line">code,</span><br><span class="line">del,</span><br><span class="line">dfn,</span><br><span class="line">em,</span><br><span class="line">img,</span><br><span class="line">ins,</span><br><span class="line">kbd,</span><br><span class="line">q,</span><br><span class="line">s,</span><br><span class="line">samp,</span><br><span class="line">small,</span><br><span class="line">strike,</span><br><span class="line">strong,</span><br><span class="line">sub,</span><br><span class="line">sup,</span><br><span class="line">tt,</span><br><span class="line">var,</span><br><span class="line">dl,</span><br><span class="line">dt,</span><br><span class="line">dd,</span><br><span class="line">ol,</span><br><span class="line">ul,</span><br><span class="line">li,</span><br><span class="line">fieldset,</span><br><span class="line">form,</span><br><span class="line">label,</span><br><span class="line">legend,</span><br><span class="line">table,</span><br><span class="line">caption,</span><br><span class="line">tbody,</span><br><span class="line">tfoot,</span><br><span class="line">thead,</span><br><span class="line">tr,</span><br><span class="line">th,</span><br><span class="line">td &#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">    border: 0;</span><br><span class="line">    outline: 0;</span><br><span class="line">    font-weight: inherit;</span><br><span class="line">    font-style: inherit;</span><br><span class="line">    font-family: inherit;</span><br><span class="line">    font-size: 100%;</span><br><span class="line">    vertical-align: baseline;</span><br><span class="line">&#125;</span><br><span class="line">body &#123;</span><br><span class="line">    line-height: 1;</span><br><span class="line">    color: #000;</span><br><span class="line">    background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">ol,</span><br><span class="line">ul &#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">table &#123;</span><br><span class="line">    border-collapse: separate;</span><br><span class="line">    border-spacing: 0;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">caption,</span><br><span class="line">th,</span><br><span class="line">td &#123;</span><br><span class="line">    text-align: left;</span><br><span class="line">    font-weight: normal;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">a img &#123;</span><br><span class="line">    border: none;</span><br><span class="line">&#125;</span><br><span class="line">input,</span><br><span class="line">button &#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">input::-moz-focus-inner,</span><br><span class="line">button::-moz-focus-inner &#123;</span><br><span class="line">    border: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">//将所有元素先规范化</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
