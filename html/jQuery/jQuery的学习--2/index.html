@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="虞启贤">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="jQuery的学习--2">
+  <meta property="og:description" content="虞启贤">
+  <meta property="og:site_name" content="虞启贤">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="www.yqxblog.top">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>虞启贤</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">jQuery的学习--2</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  目录
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/ajwlforever">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:2353350597@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/">
+                  
+                  rss
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 虞启贤</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-25</span>
+            <span class="time">16:23:19</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/html/">html</a> / <a href="/categories/html/jQuery/">jQuery</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/html/">#html</a> <a class="tag" href="/tags/jQuery/">#jQuery</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+            静态方法,jQuery内容选择器,属性和属性节点操作(attr,prop)<a id="more"></a>
+<p>一、静态方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">var arr = &#123;1,3,5,7,9&#125;;</span><br><span class="line">var obj =&#123;0:1,1:3,2:5,3:7,5:9&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//1.catch方法</span><br><span class="line">//原生的js可以遍历数组，但不可以遍历伪数组；</span><br><span class="line">//jQuery可以遍历伪数组</span><br><span class="line">arr.forEach(function(value,index)&#123;console.log(index,value);&#125;);</span><br><span class="line">obj.forEach(function(value,index)&#123;console.log(index,value);&#125;);//控制台会报错</span><br><span class="line">$each(arr,function(value,index)&#123;console.log(index,value);&#125;);</span><br><span class="line">$each(obj,function(value,index)&#123;console.log(index,value);&#125;);</span><br><span class="line"></span><br><span class="line">//2.map方法</span><br><span class="line">arr.map(fucntion(value,index,array)&#123;console.loh(value,index,array)&#125;);</span><br><span class="line">obj.map(fucntion(value,index,array)&#123;console.loh(value,index,array)&#125;);//控制台会报错</span><br><span class="line">$map(arr,function(value,index)&#123;console.log(index,value);&#125;);</span><br><span class="line">$map(obj,function(value,index)&#123;console.log(index,value);&#125;);</span><br><span class="line">//jQuery中的each和map的区别 each返回值，遍历谁就返回谁。，map返回空。</span><br><span class="line">// map可以在function里返回值 return value+index；</span><br><span class="line"></span><br><span class="line">//3.trim方法</span><br><span class="line">var str = &quot;    str     &quot;;</span><br><span class="line">vat res=$.trim(str);</span><br><span class="line">console.log(&quot;---&quot;+str+&quot;---&quot;);</span><br><span class="line">console.log(&quot;---&quot;+res+&quot;---&quot;);</span><br><span class="line"></span><br><span class="line">//4.判断是不是window，array，function</span><br><span class="line"></span><br><span class="line"> var res = $.isWindow(window); //true</span><br><span class="line"> var res = $.isArray(window); //false</span><br><span class="line"> var res = $.isFunction(window); //false</span><br><span class="line">  var res = $.isFunction(jQuery); //jQuery 本质是一个函数</span><br><span class="line"> </span><br><span class="line">//5.回复ready时间</span><br><span class="line">//原生js</span><br><span class="line">var btn = document.getElementByTagName(&quot;button&quot;)[0];</span><br><span class="line">btn.onclik = function()&#123; alert(&quot;btn&quot;);&#125;</span><br><span class="line">//暂停ready</span><br><span class="line">$holdReady(true);</span><br><span class="line">$(document).ready(function()&#123;&#125;);// 等某些元素加载完之后$holdReady(false);回复ready</span><br><span class="line">  </span><br></pre></td></tr></table></figure></p>
+<p>二、通过webstorm简化操作<br>live template</p>
+<p>三、jQuery内容选择器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;我是div&lt;/div&gt;</span><br><span class="line">&lt;div&gt;我是div123456&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure><br>1.：empty<br>var $div = $(“div:empty”);// 找既没有子元素又没有文本的指定元素<br>2.：parent<br>var $div = $(“div:parent”);// 找有子元素或有文本的指定元素<br>3.：contains(text)<br>var $div = $(“div:contains（’我是div’）”);// 找包含文本内容的指定元素  (是包含而不是等于)<br>4.：has<br>var $div = $(“div:has（’span’）”);// 找包含指定子元素的指定元素</p>
+<p>四、属性和属性节点操作  attr prop</p>
+<p><img src="https://i.loli.net/2019/04/25/5cc16bbb116e8.png" alt="20190425024414185.png"></p>
+<p><img src="https://i.loli.net/2019/04/25/5cc16bbb1bb1b.png" alt="20190425025458270.png"></p>
+<p><img src="https://i.loli.net/2019/04/25/5cc16bbb2b7e8.png" alt="20190425024938415.png"></p>
+<p><img src="https://i.loli.net/2019/04/25/5cc16bbb34cdd.png" alt="20190425025606638.png"></p>
+<p><img src="https://i.loli.net/2019/04/25/5cc16bbb0db1c.png" alt="20190425025752787.png"></p>
+<p><img src="https://i.loli.net/2019/04/25/5cc16bbb01eae.png" alt="20190425030301003.png"></p>
+<p><img src="https://i.loli.net/2019/04/25/5cc16bbb20b79.png" alt="20190425030655089.png"></p>
+<p>$(“span”).removeAttr(“class name”);<br>span的class和name属性全部删除。</p>
+<p>Prop和attr练习实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;js/jquery-3.4.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(function()&#123;</span><br><span class="line">          //编写jQuery相关代码</span><br><span class="line"></span><br><span class="line">         var button = document.getElementsByTagName(&quot;button&quot;)[0];</span><br><span class="line">         button.onclick=function () &#123;</span><br><span class="line">             var $input = $(&quot;input&quot;)[0];</span><br><span class="line">             var text =$input.value;</span><br><span class="line">             $(&quot;img&quot;).attr(&quot;src&quot;,text);</span><br><span class="line">             //$(&quot;img&quot;).prop(&quot;src&quot;,text);</span><br><span class="line">             console.log(&quot;ss&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;button&gt; 切换图片&lt;/button&gt;&lt;br&gt;</span><br><span class="line">&lt;img src=&quot;https://www.baidu.com/img/bd_logo1.png&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
