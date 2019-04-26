@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.yqxblog.top/"/>
-  <updated>2019-04-25T08:17:08.277Z</updated>
+  <updated>2019-04-26T07:08:01.539Z</updated>
   <id>www.yqxblog.top/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jQuery的学习--4</title>
+    <link href="www.yqxblog.top/html/jQuery/jQuery%E7%9A%84%E5%AD%A6%E4%B9%A0--4/"/>
+    <id>www.yqxblog.top/html/jQuery/jQuery的学习--4/</id>
+    <published>2019-04-26T05:40:00.000Z</published>
+    <updated>2019-04-26T07:08:01.539Z</updated>
+    
+    <content type="html"><![CDATA[事件的绑定,jQuery事件的冒泡和默认的行为，jQuery事件自动触发，自定义事件，jQuery的事件委托 <a id="more"></a><p>一、事件的绑定与解绑<br>1.$(“button”).click(function(){});<br>2.$(“button”).on(“click”,function(){});<br>第一种效率高，部分事件jQuery没实现，所以不能添加。<br>第二种效率低，时间全<br>两者都可以添加多个相同或多个不同内容的事件，且不会被覆盖</p><p>$(“button”).off();<br>//不传递参数，会移除所有事件<br>$(“button”).off(“click”);<br>//传递一个参数，会移除所有指定类型的事件<br>$(“button”).off(“click”，test);<br>//传递二个参数，会溢出指定类型的指定事件</p><p>二、jQuery事件的冒泡和默认的行为</p><p>冒泡：子元素事件触发父元素事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;.son&quot;).click(function(event)&#123;</span><br><span class="line">alert(&quot;hh&quot;);</span><br><span class="line">//两种方式阻止冒泡</span><br><span class="line">//1.return faslse;</span><br><span class="line">//2.event.stopPropagation(); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>默认行为:网页元素，都有自己的默认行为，例如，单击超链接会跳转…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;a&quot;).click(function(event)&#123;</span><br><span class="line">alert(&quot;hh&quot;);</span><br><span class="line">//两种方式阻止默认行为</span><br><span class="line">//1.return faslse;</span><br><span class="line">//2.event.preventDefalut(); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>三、jQuery事件自动触发<br>1.$(“”).trriger(“click”);//都会<br>2.$(“”).trrigerHandle(“click”);//不会触发事件冒泡和默认行为</p><p>a比较特殊，两种不会有默认行为。<br><figure class="highlight plain"><figcaption><span>a的时候自动触发事件且有默认行为</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;span&quot;).click(function()&#123;alert(&quot;sss&quot;)&#125;);</span><br><span class="line">.$(&quot;span&quot;).trriger(&quot;click&quot;);</span><br><span class="line">.$(&quot;span&quot;).trrigerHandle(&quot;click&quot;);</span><br><span class="line">&lt;a href=&quot;&quot;&gt;&lt;span&gt;sss&lt;/span&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure></p><p>四、自定义事件</p><p>.$(“span”).on(“Myclick”，function(){alert(“sss”)});<br>.$(“span”).trriger(“Myclick”);</p><p>ps:<br>1.不能用$(“”).click;<br>2.function(event)不能用event；<br>3.必须用trigger触发用on绑定。</p><p>五、jQuery事件命名空间<br>.$(“”).on(“click.zs”,function(){});<br>.$(“”).on(“click.ls”,function(){});</p><p>.$(“”).trriger(“click.zs”);<br>ps: on+trigger</p><p>jQuery事件命名空间面试题：<br><img src="https://i.loli.net/2019/04/26/5cc2a4c4c4592.png" alt></p><p>五、jQuery的事件委托<br>事件委托:请别人帮忙做事，然后将做完的结果反馈给我们</p><p><img src="https://i.loli.net/2019/04/26/5cc2a8cf4e86c.png" alt><br>利用已经又得ul来监听还未生成得元素。<br><img src="https://i.loli.net/2019/04/26/5cc2a935c6767.png" alt></p><p>事件委托联系：</p><p>六、jQuery移入移出事件<br>//子元素移入移出也会触发父元素事件。<br>$(“”).mouserover();<br>$(“”).mouserout();<br>//不会触发父元素的方法<br>$(“”).mouseenter();<br>$(“”).mouseleave();<br>$(“”).mousehover(function(){},function(){});//内部就是enter和leave<br>一个参数就是既监听移入又监听移出</p>]]></content>
+    
+    <summary type="html">
+    
+      事件的绑定,jQuery事件的冒泡和默认的行为，jQuery事件自动触发，自定义事件，jQuery的事件委托
+    
+    </summary>
+    
+      <category term="html" scheme="www.yqxblog.top/categories/html/"/>
+    
+      <category term="jQuery" scheme="www.yqxblog.top/categories/html/jQuery/"/>
+    
+    
+      <category term="jQuery" scheme="www.yqxblog.top/tags/jQuery/"/>
+    
+      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery的学习--3</title>
+    <link href="www.yqxblog.top/html/jQuery/jQuery%E7%9A%84%E5%AD%A6%E4%B9%A0--3/"/>
+    <id>www.yqxblog.top/html/jQuery/jQuery的学习--3/</id>
+    <published>2019-04-26T00:40:00.000Z</published>
+    <updated>2019-04-26T05:28:22.610Z</updated>
+    
+    <content type="html"><![CDATA[类的操作，操作css样式的方法，jQuery位置和尺寸操作的方法，ScrollTop方法 <a id="more"></a><p>一、类的操作<br>1.添加类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.class1&#123;</span><br><span class="line"> padding:10px;</span><br><span class="line"> background:red;</span><br><span class="line"> border: 5px solid red;</span><br><span class="line">&#125;</span><br><span class="line">$(&quot;div&quot;).addClass(&quot;class1&quot;);</span><br><span class="line">//想要删除多个类:</span><br><span class="line">$(&quot;div&quot;).addClass(&quot;class1 class2&quot;);</span><br></pre></td></tr></table></figure><br>2、 文本值相关操作</p><figure class="highlight plain"><figcaption><span>设置html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html(&quot;&lt;p&gt;我是段落&lt;/p&gt;&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>获取html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html();</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>设置text纯文本</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html(&quot;&lt;p&gt;我是段落&lt;/p&gt;&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>获取纯文本</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html();</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>设置value</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input&quot;).val(&quot;请输入内容&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>获取value</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input&quot;).val(); </span><br></pre></td></tr></table></figure><p>二、操作css样式的方法</p><figure class="highlight plain"><figcaption><span>1.逐个设置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css（&quot;width&quot;,&quot;100px&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;height&quot;,&quot;100px&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;background&quot;,&quot;red&quot;）;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>2.链式设置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css（&quot;width&quot;,&quot;100px&quot;）.css（&quot;height&quot;,&quot;100px&quot;）.css（&quot;background&quot;,&quot;red&quot;）;</span><br><span class="line">/注意点:大于三步建议分开；</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>3.批量设置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css(&#123;</span><br><span class="line">width:&quot;100px&quot;;</span><br><span class="line">height: &quot;100px&quot;;</span><br><span class="line">background: &quot;red&quot;</span><br><span class="line">&#125;);</span><br><span class="line">//企业中建议使用</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>1.获取css值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css（&quot;width&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;height&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;background&quot;）;</span><br></pre></td></tr></table></figure><p>三、jQuery位置和尺寸操作的方法<br>1.$(“.father”).width() //获取元素的宽度<br>$(“.father”).width(“500px”);//设置元素的宽度</p><p>2.$(“son”).offset().left; //获取元素距离窗口的偏移位<br>  $(“son”). offset({left: 10}); //设置元素距离窗口的偏移位</p><p>3.$(“son”).position().left;//position（） 获取元素距离<br>  $(“son”).css({left: “10px”});//position要这样设置</p><p>定位元素的偏移位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">*&#123; </span><br><span class="line">margin: 0;</span><br><span class="line">padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.faher&#123;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">backfround: red;</span><br><span class="line">margin-left:50px;</span><br><span class="line">position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.son&#123;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 100px;</span><br><span class="line">backgroud: blue;</span><br><span class="line">position: absolute;</span><br><span class="line">left: 50px;</span><br><span class="line">top: 50px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">var btns = document.getElementByTagName(&quot;button&quot;);</span><br><span class="line"></span><br><span class="line">btns[0].onclick=function()&#123;</span><br><span class="line">//获取元素的宽度</span><br><span class="line">console.log($(&quot;.father&quot;).width());</span><br><span class="line">//获取元素距离窗口的偏移位</span><br><span class="line">$(&quot;son&quot;).offset().left;</span><br><span class="line">//position（） 获取元素距离定位元素的偏移位置</span><br><span class="line">$(&quot;son&quot;).position().left;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">btns[0].onclick=function()&#123;</span><br><span class="line">//设置元素的宽度</span><br><span class="line">$(&quot;.father&quot;).width(&quot;500px&quot;);</span><br><span class="line">&#125;;</span><br><span class="line">$(&quot;son&quot;). offset(&#123;left: 10&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">注意点：position方法只能获取不能设置。</span><br><span class="line">$(&quot;son&quot;). position(&#123;left: 10&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;son&quot;).css(&#123;left: &quot;10px&quot;&#125;);//position要这样设置</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;son&quot; &gt;</span><br><span class="line">   &lt;/div&gt; &lt;/div&gt;</span><br><span class="line">&lt;button&gt;获取&lt;/button&gt;</span><br><span class="line">&lt;button&gt;设置&lt;/button&gt;</span><br></pre></td></tr></table></figure></p><p> 四、ScrollTop方法<br> $(“”).scrollTop() 获取元素偏移位<br> $(“”).scrollTop(300) 设置元素偏移位</p><p> 获取网页移动的偏移位(因为IE里是0)<br> $(“body”).scrollTop() + $(“html”).scrollTop() ;<br>设置网页移动的偏移位<br>$(“html,body”).scrollTop(300)</p>]]></content>
+    
+    <summary type="html">
+    
+      类的操作，操作css样式的方法，jQuery位置和尺寸操作的方法，ScrollTop方法
+    
+    </summary>
+    
+      <category term="html" scheme="www.yqxblog.top/categories/html/"/>
+    
+      <category term="jQuery" scheme="www.yqxblog.top/categories/html/jQuery/"/>
+    
+    
+      <category term="jQuery" scheme="www.yqxblog.top/tags/jQuery/"/>
+    
+      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery的学习--2</title>
@@ -36,18 +88,18 @@
       <category term="jQuery" scheme="www.yqxblog.top/categories/html/jQuery/"/>
     
     
-      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
-    
       <category term="jQuery" scheme="www.yqxblog.top/tags/jQuery/"/>
+    
+      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
     
   </entry>
   
   <entry>
     <title>JQuery的学习--1</title>
-    <link href="www.yqxblog.top/JQuery/JQuery%E7%9A%84%E5%AD%A6%E4%B9%A0--1/"/>
-    <id>www.yqxblog.top/JQuery/JQuery的学习--1/</id>
+    <link href="www.yqxblog.top/jQuery/JQuery%E7%9A%84%E5%AD%A6%E4%B9%A0--1/"/>
+    <id>www.yqxblog.top/jQuery/JQuery的学习--1/</id>
     <published>2019-04-23T14:25:36.606Z</published>
-    <updated>2019-04-25T06:51:38.700Z</updated>
+    <updated>2019-04-26T05:30:57.173Z</updated>
     
     <content type="html"><![CDATA[  入口函数，核心函数，静态与实例 <a id="more"></a><p>一、Jquery入口函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(</span><br><span class="line">function()&#123;</span><br><span class="line"> var $img = $(&quot;img&quot;)[0];</span><br><span class="line"> console.log($img);</span><br><span class="line"> var width = $img.width;</span><br><span class="line"> console.log(width);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">普通JS</span><br><span class="line">window.onload = function(ev)</span><br><span class="line">&#123;</span><br><span class="line">var img = document.getElementByTagName(&quot;img&quot;)[0];</span><br><span class="line"> console.log(img);</span><br><span class="line">  var width = img.width;</span><br><span class="line"> console.log(width)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>1.原生的js会等到DOM元素加载完毕并等到图片之后才加载，二JQuery会等到DOm元素加载完，但不会等到图片也加载完。<br>2.原生的js入口函数会覆盖，JQuery的入口函数不会覆盖；</p><p>JQuery的其他入口函数写法<br>1.$(document).ready(function(){}）；<br>2.jQuery(document).ready(function(){}）；<br>3.$(function(){}）；  //最主要还是用这种方法！<br>4.jQuery(function(){}）；</p><p>二、jQuery的冲突问题<br>$符号在jquery种使用，当在html种引用了别的框架也使用了这个符号的时候就会出现冲突问题；<br>一般后引入的框架会覆盖之前引入的框架;</p><p>解决方法：<br>1.释放$的使用权 jQuery.noConflict(); 用jQuery；释放操作在jQuery代码之前编写。<br>2.自定义访问符号 var nc=jQuery.noConflict()；nc(function(){}）；</p><p>三、jQuery的核心函数<br>$();就代表调用jQuery的核心函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.接受一个函数 </span><br><span class="line">$(fuction()&#123;&#125;);</span><br><span class="line">2.接受一个字符串</span><br><span class="line">2.1接受一个个字符串选择器</span><br><span class="line">var $box1 = $(&quot;.box&quot;); //class div</span><br><span class="line">var $box2 = $(&quot;#box&quot;); //id div</span><br><span class="line">console($box1);</span><br><span class="line">console($box2);</span><br><span class="line">2.2接受一个代码片段</span><br><span class="line">var $p = $(&quot;&lt;p&gt;我是锻炼罗&lt;/p&gt;);</span><br><span class="line">console.log($p);</span><br><span class="line">$box1.append($p);</span><br><span class="line">3.接受一个DOM元素 //会被包装成一个jQuery对象</span><br><span class="line">var img = document.getElementByTagName(&quot;img&quot;)[0];</span><br><span class="line">var $i = $(img);</span><br><span class="line">console.long($i);</span><br></pre></td></tr></table></figure></p><p>四、jQuery对象<br>本质上是一个伪数组。<br>var $div = $(“div”);</p><p>五、静态方法和实例方法<br>静态方法：<br>//1.定义一个类<br>function Aclass(){}<br>//2.给这个类添加一个静态方法<br>Aclass.staticMethod = function(){alert(“staticMethod”);}<br>//3.调用<br>AClass.staticMehod();</p><p>实例方法：<br>//1.给这和类添加一个实例方法<br>Aclass.prototype.instanceMethod = function(){alert(“InstanceMethod();}<br>//2.创建一个实例（对象）<br>var a = new Aclass():<br>//3.调用<br>a.instanceMethod();</p>]]></content>
     
@@ -57,12 +109,12 @@
     
     </summary>
     
-      <category term="JQuery" scheme="www.yqxblog.top/categories/JQuery/"/>
+      <category term="jQuery" scheme="www.yqxblog.top/categories/jQuery/"/>
     
+    
+      <category term="jQuery" scheme="www.yqxblog.top/tags/jQuery/"/>
     
       <category term="html" scheme="www.yqxblog.top/tags/html/"/>
-    
-      <category term="JQuery" scheme="www.yqxblog.top/tags/JQuery/"/>
     
   </entry>
   

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="虞启贤">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="jQuery的学习--3">
+  <meta property="og:description" content="虞启贤">
+  <meta property="og:site_name" content="虞启贤">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="www.yqxblog.top">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>虞启贤</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">jQuery的学习--3</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  目录
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/ajwlforever">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:2353350597@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/">
+                  
+                  rss
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 虞启贤</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-26</span>
+            <span class="time">15:09:30</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/html/">html</a> / <a href="/categories/html/jQuery/">jQuery</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/jQuery/">#jQuery</a> <a class="tag" href="/tags/html/">#html</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          类的操作，操作css样式的方法，jQuery位置和尺寸操作的方法，ScrollTop方法 <a id="more"></a>
+<p>一、类的操作<br>1.添加类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.class1&#123;</span><br><span class="line"> padding:10px;</span><br><span class="line"> background:red;</span><br><span class="line"> border: 5px solid red;</span><br><span class="line">&#125;</span><br><span class="line">$(&quot;div&quot;).addClass(&quot;class1&quot;);</span><br><span class="line">//想要删除多个类:</span><br><span class="line">$(&quot;div&quot;).addClass(&quot;class1 class2&quot;);</span><br></pre></td></tr></table></figure><br>2、 文本值相关操作</p>
+<figure class="highlight plain"><figcaption><span>设置html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html(&quot;&lt;p&gt;我是段落&lt;/p&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>获取html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>设置text纯文本</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html(&quot;&lt;p&gt;我是段落&lt;/p&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>获取纯文本</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).html();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>设置value</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input&quot;).val(&quot;请输入内容&quot;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>获取value</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input&quot;).val(); </span><br></pre></td></tr></table></figure>
+<p>二、操作css样式的方法</p>
+<figure class="highlight plain"><figcaption><span>1.逐个设置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css（&quot;width&quot;,&quot;100px&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;height&quot;,&quot;100px&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;background&quot;,&quot;red&quot;）;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>2.链式设置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css（&quot;width&quot;,&quot;100px&quot;）.css（&quot;height&quot;,&quot;100px&quot;）.css（&quot;background&quot;,&quot;red&quot;）;</span><br><span class="line">/注意点:大于三步建议分开；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>3.批量设置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css(&#123;</span><br><span class="line">width:&quot;100px&quot;;</span><br><span class="line">height: &quot;100px&quot;;</span><br><span class="line">background: &quot;red&quot;</span><br><span class="line">&#125;);</span><br><span class="line">//企业中建议使用</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>1.获取css值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).css（&quot;width&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;height&quot;）;</span><br><span class="line">$(&quot;div&quot;).css（&quot;background&quot;）;</span><br></pre></td></tr></table></figure>
+<p>三、jQuery位置和尺寸操作的方法<br>1.$(“.father”).width() //获取元素的宽度<br>$(“.father”).width(“500px”);//设置元素的宽度</p>
+<p>2.$(“son”).offset().left; //获取元素距离窗口的偏移位<br>  $(“son”). offset({left: 10}); //设置元素距离窗口的偏移位</p>
+<p>3.$(“son”).position().left;//position（） 获取元素距离<br>  $(“son”).css({left: “10px”});//position要这样设置</p>
+<p>定位元素的偏移位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">*&#123; </span><br><span class="line">margin: 0;</span><br><span class="line">padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.faher&#123;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">backfround: red;</span><br><span class="line">margin-left:50px;</span><br><span class="line">position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.son&#123;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 100px;</span><br><span class="line">backgroud: blue;</span><br><span class="line">position: absolute;</span><br><span class="line">left: 50px;</span><br><span class="line">top: 50px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">var btns = document.getElementByTagName(&quot;button&quot;);</span><br><span class="line"></span><br><span class="line">btns[0].onclick=function()&#123;</span><br><span class="line">//获取元素的宽度</span><br><span class="line">console.log($(&quot;.father&quot;).width());</span><br><span class="line">//获取元素距离窗口的偏移位</span><br><span class="line">$(&quot;son&quot;).offset().left;</span><br><span class="line">//position（） 获取元素距离定位元素的偏移位置</span><br><span class="line">$(&quot;son&quot;).position().left;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">btns[0].onclick=function()&#123;</span><br><span class="line">//设置元素的宽度</span><br><span class="line">$(&quot;.father&quot;).width(&quot;500px&quot;);</span><br><span class="line">&#125;;</span><br><span class="line">$(&quot;son&quot;). offset(&#123;left: 10&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">注意点：position方法只能获取不能设置。</span><br><span class="line">$(&quot;son&quot;). position(&#123;left: 10&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;son&quot;).css(&#123;left: &quot;10px&quot;&#125;);//position要这样设置</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;son&quot; &gt;</span><br><span class="line">   &lt;/div&gt; &lt;/div&gt;</span><br><span class="line">&lt;button&gt;获取&lt;/button&gt;</span><br><span class="line">&lt;button&gt;设置&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p> 四、ScrollTop方法<br> $(“”).scrollTop() 获取元素偏移位<br> $(“”).scrollTop(300) 设置元素偏移位</p>
+<p> 获取网页移动的偏移位(因为IE里是0)<br> $(“body”).scrollTop() + $(“html”).scrollTop() ;<br>设置网页移动的偏移位<br>$(“html,body”).scrollTop(300)</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
