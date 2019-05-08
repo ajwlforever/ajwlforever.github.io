@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="虞启贤">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="jQuery的学习--6">
+  <meta property="og:description" content="虞启贤">
+  <meta property="og:site_name" content="虞启贤">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="www.yqxblog.top">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>虞启贤</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">jQuery的学习--6</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  目录
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/ajwlforever">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:2353350597@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/">
+                  
+                  rss
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 虞启贤</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-28</span>
+            <span class="time">22:46:20</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/html/">html</a> / <a href="/categories/html/jQuery/">jQuery</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/jQuery/">#jQuery</a> <a class="tag" href="/tags/html/">#html</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          淡入和淡出动画,自定义动画，stop和delay方法,图标特效<a id="more"></a>
+<p>一、淡入和淡出动画<br>$(“”).fadeIn(1000,function(){});<br>$(“”).fadeOut(1000,function(){});<br>$(“”).fadeToggle(1000,function(){});<br>$(“”).fadeTo(1000,0.2,function(){});</p>
+<p>二、自定义动画</p>
+<p>$(“”).animate({},1000,function(){});<br>第一个参数可以修改对象属性<br>example：<br>$(“.one”).animate({width:500},1000,function(){alert(“自定义动画”);});  //动画1s后弹出alert</p>
+<p>时间参数后可以加： linear 和 swing 匀速和缓动  //也可以在基本动画里面使用，一般企业操作不会用<br>example：<br>$(“.one”).animate({width:500},1000,”linear”,function(){alert(“自定义动画”);});  //动画1s后弹出alert<br>$(“.one”).animate({width:500},1000,”swing”,function(){alert(“自定义动画”);});  //动画1s后弹出alert</p>
+<p>属性可以累加<br>width: “+=100”<br>example：<br>$(“.one”).animate(width: “+=100”},1000,”swing”,function(){alert(“自定义动画”);});  //动画1s后弹出alert</p>
+<p>关键字:<br>width: “hide”  width: “toggle”<br>example：<br>$(“.one”).animate(width: “hide”},1000,”swing”,function(){alert(“自定义动画”);});  //动画1s后弹出alert</p>
+<p>多个属性同时修改会同时执行<br>多个单个属性在同一动画队列里会先后执行。</p>
+<p>三、jQuery的stop和delay方法<br>1.delay<br>$(“”).animate({},1000,function(){}).delay(time).animate({},1000,function(){});;<br>$(“.one”).animate(width: “+=100”},1000,”swing”,function(){alert(“自定义动画”);}).delay(20000).animate(height: “+=100”},1000,”swing”,function(){alert(“自定义动画”);});<br>2.stop<br>(1).$(“”).stop()；//$(“”).stop(false)；.$(“”).stop(false,false)； 没有参数，表示立即停止当前的动画，继续执行后续执行的动画；<br>(2).$(“”).stop(true)；//.$(“”).stop(true,false)； //立即停止当前和后续的所有动画<br>(3).$(“”).stop(false,true）；//立即完成当前但停止所有后续的后续的所有动画</p>
+<p>finish和stop差不多，不讲了。。</p>
+<p>设置<br>1.off 打开或关闭全局动画的<br>jQuery.fc.off=true; 关闭；<br>2.interval<br>jQuery.fc.interval=5;<br>默认值是13，值越小，动画越流畅，对浏览器要求越高。</p>
+<p>无限循环滚动:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;图片滚动&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin : 0;</span><br><span class="line">            padding :  0;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .imgbox&#123;</span><br><span class="line">            width:600px;</span><br><span class="line">            height:300px;</span><br><span class="line">            margin:100px auto;</span><br><span class="line">           overflow: hidden;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .imgbox&gt;ul&#123;</span><br><span class="line">            list-style: none;</span><br><span class="line">            width: 1800px;</span><br><span class="line">            height:300px;</span><br><span class="line">            background: black;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .imgbox&gt;ul&gt;li&#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            float:left;</span><br><span class="line">        &#125;</span><br><span class="line">        .imgbox&gt;ul&gt;li&gt;span&#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            background: #2ecc71;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">     &lt;script src=&quot;jQuery/js/jquery-3.4.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">         &lt;script&gt;</span><br><span class="line">             $(function()&#123;</span><br><span class="line">               //编写jQuery相关代码</span><br><span class="line">                 //1.图片设置</span><br><span class="line">                 var s= [&quot;#1abc9c&quot;,&quot;#9b59b6&quot;,&quot;#e67e22&quot;,&quot;#95a5a6&quot;,&quot;#1abc9c&quot;,&quot;#9b59b6&quot;];</span><br><span class="line">                 $(&quot;li&quot;).each(function (index) &#123;</span><br><span class="line">                     $(this).children(&quot;span&quot;).css(&quot;background&quot;,s[index]);</span><br><span class="line">                 &#125;)</span><br><span class="line">                 //2.定时器设置</span><br><span class="line">                 var timer ;</span><br><span class="line">                 var offset = 0;</span><br><span class="line">                 function CreateTimer() &#123;</span><br><span class="line"></span><br><span class="line">                     timer = setInterval(function () &#123;</span><br><span class="line">                         offset-=10;</span><br><span class="line">                         if(offset===-1200) offset=0;</span><br><span class="line">                         $(&quot;.imgul&quot;).css(&quot;margin-left&quot;,offset);</span><br><span class="line">                         console.log(offset);</span><br><span class="line">                     &#125;,50);</span><br><span class="line">                 &#125;</span><br><span class="line">                CreateTimer();</span><br><span class="line"></span><br><span class="line">                 $(&quot;li&quot;).hover(function () &#123;</span><br><span class="line">                         clearInterval(timer);</span><br><span class="line">                         $(this).siblings().fadeTo(100,0.5);</span><br><span class="line">                         $(this).fadeTo(100,1);</span><br><span class="line">                 &#125;,</span><br><span class="line">                 function () &#123;</span><br><span class="line">                        CreateTimer();</span><br><span class="line">                     $(&quot;li&quot;).fadeTo(100,1);</span><br><span class="line">                 &#125;)</span><br><span class="line">             &#125;);</span><br><span class="line">         &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;imgbox&quot;&gt;</span><br><span class="line">    &lt;ul class=&quot;imgul&quot;&gt;</span><br><span class="line">        &lt;li&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"> </span><br><span class="line"> </span><br></pre></td></tr></table></figure></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

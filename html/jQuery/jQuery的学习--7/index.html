@@ -8,10 +8,10 @@
   <meta name="description" content>
   <meta name="author" content="虞启贤">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="虞启贤">
+  <meta property="og:title" content="jQuery的学习--7">
   <meta property="og:description" content="虞启贤">
   <meta property="og:site_name" content="虞启贤">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:image" content="www.yqxblog.top">
   
   
@@ -41,7 +41,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">无标题文章</p>
+          <p class="title">jQuery的学习--7</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -105,17 +105,35 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2019-03-31</span>
+            <span class="date">2019-05-08</span>
             <span class="time">22:46:20</span>
           </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/html/">html</a> / <a href="/categories/html/jQuery/">jQuery</a>
+</span>
           
         </div>
         <!-- Tags -->
         
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/jQuery/">#jQuery</a> <a class="tag" href="/tags/html/">#html</a>
+
+
+          </div>
+        
         <!-- Post Main Content -->
         <div class="post-content">
-          <h2 id="ProJect-X-设计大纲"><a href="#ProJect-X-设计大纲" class="headerlink" title="ProJect-X 设计大纲"></a><h1>ProJect-X 设计大纲</h1></h2><p></p><h2>一、游戏背景</h2><br>  远古的神界大陆，人神魔三足自大陆开创便是大陆最大的三大势力。<br>  如今，魔头当世，人神联联合若多种族方能堪堪与之抗敌。大陆常年战争，无一人可逃避。<br>   xxx 应运而生，将打破格局，在大陆上建立新的秩序。<p></p>
-<p>二、游戏设定<br> 1.大陆版图<br>    大陆分为可分为5块，魔族占领其中的3块，魔腾之地（魔族发源之地），青衍魔域，灵檀魔海。<br>    其余两块，迷迭中域，坤坎仙域。</p>
+          <p>文档处理<br>一、添加节点<br> <img src="https://i.loli.net/2019/05/08/5cd278d3dc5ac.png" alt><br> 1.内部插入<br> $(“ul”).append(“”);<br> append 会将元素添加到指定元素内部的最后<br> prepend 会将元素添加到指定元素内部的最前面</p>
+<p> appendTo<br> prepend  与上面两个一样，书写的格式是反的。<br> 2.外部插入<br> after 会将元素添加到指定元素外部的后面。<br> brfore 会将元素添加到指定元素内部的前面</p>
+<p> insertAfter<br> insertBefore 与上面两个一样，书写的格式是反的。</p>
+<p> 二、删除节点及其相关方法<br>  remove() 删除指定元素<br>  empty()  清空元素内部内容与子元素<br>  detach() 和remove一样</p>
+<p>  三、替换节点<br>  replaceWith()  $(“h1”).replaceWith($h6)<br>  replaceAll()    $h6.replaceAll(“h1”);</p>
+<p>  三、复制节点<br>  1.浅复制节点<br>  var $li = $(“li:first”).clone(fasle);  只复制元素，不复制事件<br>  2.深复制节点<br>  var $li = $(“li:first”).clone(true);  全部复制</p>
 
         </div>
       </div>
