@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.yqxblog.top/"/>
-  <updated>2019-05-08T07:44:20.143Z</updated>
+  <updated>2019-05-25T07:47:44.289Z</updated>
   <id>www.yqxblog.top/</id>
   
   <author>
@@ -15,6 +15,99 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle---3</title>
+    <link href="www.yqxblog.top/Oracle/Oracle---3/"/>
+    <id>www.yqxblog.top/Oracle/Oracle---3/</id>
+    <published>2019-05-25T12:40:00.000Z</published>
+    <updated>2019-05-25T07:47:44.289Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a> <p><br></p><p>一、回滚段的管理<br>1.查看回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COL 回滚段名 FOR A20</span><br><span class="line">SELECT</span><br><span class="line">SEGMENT_NAME 回滚段名 , TABLESPACE_NAME 所在表空间，BYTES 大小</span><br><span class="line">FROM DBA_SEGMENTS WHERE SEGMENT_TYPE=&apos;ROLLBACK&apos;;</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8ed98a941589164.png" alt></p><p>还可以使用视图 V$ROLLNAME 和视图 V$ROLLSTAT<br><img src="https://i.loli.net/2019/05/25/5ce8ee84c4d0230376.png" alt><br><img src="https://i.loli.net/2019/05/25/5ce8ee8600acd59452.png" alt></p><p>2.查看和设置回滚段的管理模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW PARAMETER UNDO_MANAGEMENT</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8efc2af30021304.png" alt><br><figure class="highlight plain"><figcaption><span>将回滚段管理模式设置为手动管理</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter system set UNDO_MANAGEMENT = MANUAL</span><br><span class="line">SCOPE = SPFILE;</span><br></pre></td></tr></table></figure></p><p>3.创建回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE [PUBLIC] ROLLBACK SEGMENT 回滚段名称</span><br><span class="line"> TABLESPACE T1</span><br><span class="line"> STORAGE 存储选项：&#123;</span><br><span class="line"> inital 5M</span><br><span class="line"> next 2M</span><br><span class="line"> maxextents unlimited</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p><p>4.修改回滚段的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.设置状态</span><br><span class="line">alter rollback segment 回滚段名称 online</span><br><span class="line">2.手动收缩回滚段</span><br><span class="line">3.alter rollback segment 回滚段名称 shrink to 回滚段的初始大小</span><br></pre></td></tr></table></figure><br>5.删除回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter rollback segment 回滚段名称 offline //先脱机</span><br><span class="line">drop rollback segment 回滚段名称</span><br></pre></td></tr></table></figure></p><p>二、数据库文件管理<br>1.N(System Change Number）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;一、回滚段的管理&lt;br&gt;1.查看回滚段&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;lin
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="www.yqxblog.top/categories/Oracle/"/>
+    
+    
+      <category term="Oracle" scheme="www.yqxblog.top/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle---2</title>
+    <link href="www.yqxblog.top/Oracle/Oracle---2/"/>
+    <id>www.yqxblog.top/Oracle/Oracle---2/</id>
+    <published>2019-05-16T13:40:00.000Z</published>
+    <updated>2019-05-25T07:17:42.266Z</updated>
+    
+    <content type="html"><![CDATA[ 表空间  <a id="more"></a> <p>一、查看表空间信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select * from v$tablespace;</span><br><span class="line">select tablespace_name,contents,status from dba_tablespaces;//属性信息</span><br><span class="line">select * from dba_segments;//查看段信息；</span><br><span class="line">select * from dba_free_space;//查看表空间中空闲区间的信息；</span><br><span class="line">select * from dba_data_files;//查询所有数据文件的信息；</span><br><span class="line"></span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/16/5cdd629ca449598241.png" alt><br><img src="https://i.loli.net/2019/05/16/5cdd63220fe8f38869.png" alt></p><p>统计表空间的额总空间大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select tablespace_name as 表空间名,SUM(bytes)</span><br><span class="line">from dba_data_files</span><br><span class="line">group by tablespace_name;</span><br></pre></td></tr></table></figure><br><img src="/20190516205734005/20190516092249751.png" alt><br>统计表空间的空闲空间大小和表空间的使用情况 P87</p><p>二、创建表空间<br>Create [UNDO] Tablespace 表空间名<br>【datafile子句<br>【{ MINNUM EXTENT 整数 [k|m]<br>| BLOCKSIZE 整数 [k]<br>|logging子句<br>|FORCE LOGGING<br>|DEFAULT{是否压缩数据段}存储子句<br>| [online|offline]<br>| [permanent|tempopary]<br>| 区间管理子句<br>| 段管理子句 }】<br><figure class="highlight plain"><figcaption><span>1.创建本地表空间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create tablespace t1 datafile &apos;&apos; size 10G;</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><figcaption><span>2.创建大文件表空间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create bigfile tablespace t1 datafile &apos;&apos; size 10G;</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><figcaption><span>3.创建临时表空间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create temporary tablespace t1 datafile &apos;&apos; size 10M </span><br><span class="line">reuse</span><br><span class="line">extent managemant local uniform size 16m;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>4.定义表空间的段管理方式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create  tablespace t1 datafile &apos;&apos; size 10M </span><br><span class="line">extent managemant local autoallocate</span><br><span class="line">segment space management auto;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><figcaption><span>5.创建撤销表空间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create  undo tablespace t1 datafile &apos;&apos; size 10m reuse;</span><br></pre></td></tr></table></figure><p>三、设置和修改表空间属性<br> <figure class="highlight plain"><figcaption><span>1.重命名表空间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace 表空间名字 rename to 表空间新名字;</span><br></pre></td></tr></table></figure><br> <figure class="highlight plain"><figcaption><span>2.向本地表空间增加数据文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace t1 add datafile &apos;&apos; size 10m;</span><br></pre></td></tr></table></figure><br>  <figure class="highlight plain"><figcaption><span>3.修改大文件表空间属性</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace t1 resize 10G;</span><br></pre></td></tr></table></figure><br>  <figure class="highlight plain"><figcaption><span>4.向临时表空间中添加临时文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace t1 add tempfile d1 size 10m;</span><br></pre></td></tr></table></figure><br>  <figure class="highlight plain"><figcaption><span>5.设置表空间的状态</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace 表空间名字 offline||online||only||write</span><br></pre></td></tr></table></figure></p><p>四、删除表空间<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop tablespace t1 including contents and datafiles;</span><br><span class="line"> </span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      表空间
+    
+    </summary>
+    
+      <category term="Oracle" scheme="www.yqxblog.top/categories/Oracle/"/>
+    
+    
+      <category term="Oracle" scheme="www.yqxblog.top/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle---1</title>
+    <link href="www.yqxblog.top/Oracle/Oracle---1/"/>
+    <id>www.yqxblog.top/Oracle/Oracle---1/</id>
+    <published>2019-05-16T12:40:00.000Z</published>
+    <updated>2019-05-25T07:19:32.801Z</updated>
+    
+    <content type="html"><![CDATA[启动EM ，创建数据库，启动数据库，配置情况，维护数据库(shutdown 和 startup)<a id="more"></a> <p><br><br>一、启动 Oracle Enterprise Manager<br>在确认OracleDBConsoleoracl服务已经启动后后<br>https:// oracle数据库服务器名称:&lt;Em端口号&gt;/em<br><a href="https://orcl:1158/em" target="_blank" rel="noopener">https://orcl:1158/em</a></p><figure class="highlight plain"><figcaption><span>cmd下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sqlplus /nolog</span><br><span class="line">conn /as sysdba</span><br><span class="line">//nolog下以sysdba身份进入Oracle</span><br><span class="line">startup pfile=&apos;E:\app\ajwlf\admin\orcl\pfile\init.ora.1282019185223&apos;</span><br><span class="line">//开启数据库实例</span><br><span class="line"></span><br><span class="line">重新启动监听程序。</span><br><span class="line"></span><br><span class="line">lsnrctl stop // 关闭</span><br><span class="line"></span><br><span class="line">lsnrctl start // 启动</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$select name,created from v$database;</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2019/05/16/5cdd53c92abde25018.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$select * from v$version;  //查看数据库的详细版本信息</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/16/5cdd564a7f41b64286.png" alt></p><p>二、创建数据库</p><ol><li>使用 Database Configuration Assitant 工具创建数据库实例 具体见书的49页</li><li>使用DBCA命令</li><li>创建数据库 书P55</li><li>使用SQL语句创建数据库 ordim -new -sid &lt;实例名&gt; -intpwd OraclePass</li><li>创建文本初始化参数文件（PFILE）</li></ol><p>三、删除数据库<br>1.Database Configuration Assitant<br>2.使用DBCA命令<br>3.使用DROP DATABASE 语句删除数据库</p><p>四、配置情况<br>查看初始化参数:<br>1.em<br>2.SHOW　ＰＡＲＡＭＥＴＥＲ<br>ＳＨＯＷ PARAMETERS ｄｂ　查看所有以ｄｂ开头的初始化参数<br><img src="https://i.loli.net/2019/05/16/5cdd5b3603ae862022.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select　name,value,display_value from v$parameter</span><br><span class="line">where name like &apos;%db%&apos; ;</span><br></pre></td></tr></table></figure></p><p>四、维护数据库<br>1.使用shutdown命令关闭数据库实例<br>（1）正常关闭:shutdown normal;<br> (2) 以处理事务方式来关闭：shutdown transactional;<br> (3) 立即关闭： shutdown immediate<br> (4) 中止关闭数据库实例： shutdown abott</p><p>2.使用startup命令打开数据库实例<br>  (1) 正常启动： startup<br>  (2) 以指定的初始化参数文件启动 Startup PFILE=‘’；<br>  (3) 启动数据库实例。但不装载数据库 startup nomount<br>  (4) 启动数据库实例。装载数据库 startup mount<br>  (5) 强制启动数据库实例： startup force<br>  (6) 以限制模式启动数据库实例：startup restrict<br>  (7) 在数据库启动是开始介质恢复： startup recovery</p><p>  3.使用alter database命令来改变启动模式<br>  alter database mount<br>  alter database open<br>  alter database open read only</p>]]></content>
+    
+    <summary type="html">
+    
+      启动EM ，创建数据库，启动数据库，配置情况，维护数据库(shutdown 和 startup)
+    
+    </summary>
+    
+      <category term="Oracle" scheme="www.yqxblog.top/categories/Oracle/"/>
+    
+    
+      <category term="Oracle" scheme="www.yqxblog.top/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery的学习--8</title>
+    <link href="www.yqxblog.top/html/jQuery/jQuery%E7%9A%84%E5%AD%A6%E4%B9%A0--8/"/>
+    <id>www.yqxblog.top/html/jQuery/jQuery的学习--8/</id>
+    <published>2019-05-09T13:40:00.000Z</published>
+    <updated>2019-05-09T15:39:19.850Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="html" scheme="www.yqxblog.top/categories/html/"/>
+    
+      <category term="jQuery" scheme="www.yqxblog.top/categories/html/jQuery/"/>
+    
+    
+      <category term="jQuery" scheme="www.yqxblog.top/tags/jQuery/"/>
+    
+      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery的学习--7</title>
@@ -398,72 +491,6 @@
     
     
       <category term="html" scheme="www.yqxblog.top/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html ：before ：after的运用</title>
-    <link href="www.yqxblog.top/html%E7%9A%84%E5%AD%A6%E4%B9%A0/html-%EF%BC%9A%EF%BC%9Abefore-%EF%BC%9A%EF%BC%9Aafter%E7%9A%84%E8%BF%90%E7%94%A8/"/>
-    <id>www.yqxblog.top/html的学习/html-：：before-：：after的运用/</id>
-    <published>2019-03-24T12:31:30.000Z</published>
-    <updated>2019-03-26T01:32:55.610Z</updated>
-    
-    <content type="html"><![CDATA[  如果我看穿你的思念，我就不会为你哭红双眼 <a id="more"></a><p>：before和：after时css中的一种伪元素<br>：before 就是在某个元素之前插入内容<br>: after  就是在某个元素之后插入内容</p><figure class="highlight html"><figcaption><span>hello world</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    p:before&#123;</span></span><br><span class="line"><span class="undefined">        content: "H"  /*:before和:after必带技能，重要性为满5颗星*/</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    p:after&#123;</span></span><br><span class="line"><span class="undefined">        content: "d"  /*:before和:after必带技能，重要性为满5颗星*/</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>ello Worl<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  </span><br></pre></td></tr></table></figure><p>  边框一个正方形里四个三角形<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .triangle&#123;</span><br><span class="line">      width: 0;</span><br><span class="line">      height: 0;</span><br><span class="line">      border-left:50px solid red;</span><br><span class="line">      border-bottom:50px solid blue;</span><br><span class="line">      border-top:50px solid black;</span><br><span class="line">      border-right:50px solid purple</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure><br>   结果展示：</p><p>  <style><br>    .triangle{<br>        width: 0;<br>        height: 0;<br>        border-left:50px solid red;<br>        border-bottom:50px solid blue;<br>        border-top:50px solid black;<br>        border-right:50px solid purple<br>    }<br>  </style><br>  <div class="triangle"></div></p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.triangle&#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border:50px solid transparent; /*这里我们将元素的边框宽度设置为50px，transparent表示边框颜色是透明的，solid表示边框是实线的*/</span><br><span class="line">    border-top-color: black;  /*这里我们仅将上边框的颜色设置为黑色，众所周知，css后面的样式代码会覆盖之前的相同的样式代码，至于其他三边的还是透明色*/</span><br><span class="line">    /*border-bottom-color: black; //这里设置底部边框色为黑色</span><br><span class="line">      border-left-color: black;   //这里设置左边边框色为黑色</span><br><span class="line">      border-right-color:black    //这里设置右边边框色为黑色*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  结果展示：</p><p>  <style><br>  .triangle_1{<br>      width: 0;<br>      height: 0;<br>      border:50px solid transparent;<br>      border-top-color: black;<br>  }<br>  </style><br>  <div class="triangle_1"></div><br>  <figure class="highlight plain"><figcaption><span>没有加入before after 的情况</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .test-div&#123;</span><br><span class="line">      position: relative;  /*日常相对定位*/</span><br><span class="line">      width:150px;</span><br><span class="line">      height:36px;</span><br><span class="line">      border-radius:5px;</span><br><span class="line">      border:black 1px solid;</span><br><span class="line">      background: rgba(245,245,245,1)</span><br><span class="line">  &#125;</span><br><span class="line">  .test-div:before&#123;</span><br><span class="line">      content: &quot;&quot;;  /*:before和:after必带技能，重要性为满5颗星*/</span><br><span class="line">      display: block;</span><br><span class="line">      position: absolute;  /*日常绝对定位*/</span><br><span class="line">      top:8px;</span><br><span class="line">      width: 0;</span><br><span class="line">      height: 0;</span><br><span class="line">      border:6px solid transparent;</span><br><span class="line">      left:-12px;</span><br><span class="line">      border-right-color: rgba(245,245,245,1);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;test-div&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .test-div&#123;</span><br><span class="line">      position: relative;  /*日常相对定位*/</span><br><span class="line">      width:150px;</span><br><span class="line">      height: 36px;</span><br><span class="line">      border:1px solid black;</span><br><span class="line">      border-radius:5px;</span><br><span class="line">      background: rgba(245,245,245,1)</span><br><span class="line">  &#125;</span><br><span class="line">  .test-div:before,.test-div:after&#123;</span><br><span class="line">      content: &quot;&quot;;  /*:before和:after必带技能，重要性为满5颗星*/</span><br><span class="line">      display: block;</span><br><span class="line">      position: absolute;  /*日常绝对定位*/</span><br><span class="line">      top:8px;</span><br><span class="line">      width: 0;</span><br><span class="line">      height: 0;</span><br><span class="line">      border:6px solid transparent;</span><br><span class="line">  &#125;</span><br><span class="line">  .test-div:before&#123;</span><br><span class="line">      left:-11px;</span><br><span class="line">      border-right-color: rgba(245,245,245,1);</span><br><span class="line">      z-index:1</span><br><span class="line">  &#125;</span><br><span class="line">  .test-div:after&#123;</span><br><span class="line">      left:-12px;</span><br><span class="line">      border-right-color: rgba(0,0,0,1);</span><br><span class="line">      z-index: 0</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;test-div&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure><p>  搬运链接：<a href="https://www.cnblogs.com/ys-ys/p/5092760.html" target="_blank" rel="noopener">https://www.cnblogs.com/ys-ys/p/5092760.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      如果我看穿你的思念，我就不会为你哭红双眼
-    
-    </summary>
-    
-      <category term="html的学习" scheme="www.yqxblog.top/categories/html%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo的认识-1</title>
-    <link href="www.yqxblog.top/hexo%E7%9A%84%E5%AD%A6%E4%B9%A0/%E8%99%9E%E5%90%AF%E8%B4%A4%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
-    <id>www.yqxblog.top/hexo的学习/虞启贤的第二篇/</id>
-    <published>2019-03-23T15:47:05.413Z</published>
-    <updated>2019-03-26T01:31:49.596Z</updated>
-    
-    <content type="html"><![CDATA[  I can do anything --steph curry <a id="more"></a><p>在知道有hexo这个东西前，由于对github和echarts的使用，我电脑中的git、node.js、npm（node.js已经集成了npm）的安装已经全部完成。</p><p>node.js安装：<a href="https://blog.csdn.net/weixin_41585557/article/details/79155526" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41585557/article/details/79155526</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm config set cache &quot;D:\Program </span><br></pre></td></tr></table></figure><br>Files\Nodejs\node_global”  //配置npm的全局模块的存放路径以及cache的路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$npm config set prefix &quot;D:\Program </span><br><span class="line">Files\Nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure><br>二、<br>在b站的视频中安装hexo是在cmd 用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g. </span><br><span class="line">//-g这里是全局的意思。npm install 本地安装与全局安装的区别：https://www.cnblogs.com/qiangxia/p/5264720.html</span><br></pre></td></tr></table></figure><br>我安装的是</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br></pre></td></tr></table></figure><p>hexo-cli与hexo的关系 <a href="http://www.one-more-tech.info/Hexo-%E4%B8%8E-Hexo-cli-%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%81%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index/" target="_blank" rel="noopener">http://www.one-more-tech.info/Hexo-%E4%B8%8E-Hexo-cli-%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%81%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index/</a></p><p>这时可以用 hexo -v 查看hexo版本 在cmd和git中操作都可以，我是选择在git中操作。<br>ps：这时有可能会说hexo不是命令或不是外部命令，这是因为系统环境变量加到path之后<br>C:\Users\ajwlf\node_modules\hexo\node_modules.bin 这里的.bin里面只有两个文件，千万不要去找install到npm里的hexo的.bin，一定是在c盘。<br>这里我耽误了好长时间，就是因为没找到。。。甚至一度以为时出了别的问题，重新下载了好几遍hexo和hexo-cli</p><p>三、安装hexo<br>安装完之后对博客文件（随便建一个空文件即可）夹进行gitbash 将hexo安装到博客文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><br>之后就是基本的hexo操作了</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      I can do anything --steph curry
-    
-    </summary>
-    
-      <category term="hexo的学习" scheme="www.yqxblog.top/categories/hexo%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="hexo" scheme="www.yqxblog.top/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>虞启贤的第一篇博客文章</title>
-    <link href="www.yqxblog.top/diary/hello-world/"/>
-    <id>www.yqxblog.top/diary/hello-world/</id>
-    <published>2019-03-23T12:31:30.000Z</published>
-    <updated>2019-03-26T01:30:50.424Z</updated>
-    
-    <content type="html"><![CDATA[  世界本没有路，走的人多了便成了路。 感谢HEXO <a id="more"></a><p>额，努力多写，努力搬运！</p>]]></content>
-    
-    <summary type="html">
-    
-      世界本没有路，走的人多了便成了路。 感谢HEXO
-    
-    </summary>
-    
-      <category term="diary" scheme="www.yqxblog.top/categories/diary/"/>
-    
-    
-      <category term="diary" scheme="www.yqxblog.top/tags/diary/"/>
     
   </entry>
   
