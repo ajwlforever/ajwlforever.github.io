@@ -106,7 +106,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-05-25</span>
-            <span class="time">15:48:23</span>
+            <span class="time">18:03:30</span>
           </span>
           
           <!--  Categories  -->
@@ -128,14 +128,19 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <a id="more"></a> 
-<p><br></p>
-<p>一、回滚段的管理<br>1.查看回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COL 回滚段名 FOR A20</span><br><span class="line">SELECT</span><br><span class="line">SEGMENT_NAME 回滚段名 , TABLESPACE_NAME 所在表空间，BYTES 大小</span><br><span class="line">FROM DBA_SEGMENTS WHERE SEGMENT_TYPE=&apos;ROLLBACK&apos;;</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8ed98a941589164.png" alt></p>
+          回滚段的管理、数据库文件管理（控制文件，重做日志文件，归档文件） <a id="more"></a>
+<h2 id="一、回滚段的管理"><a href="#一、回滚段的管理" class="headerlink" title="一、回滚段的管理"></a>一、回滚段的管理</h2><p>1.查看回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COL 回滚段名 FOR A20</span><br><span class="line">SELECT</span><br><span class="line">SEGMENT_NAME 回滚段名 , TABLESPACE_NAME 所在表空间，BYTES 大小</span><br><span class="line">FROM DBA_SEGMENTS WHERE SEGMENT_TYPE=&apos;ROLLBACK&apos;;</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8ed98a941589164.png" alt></p>
 <p>还可以使用视图 V$ROLLNAME 和视图 V$ROLLSTAT<br><img src="https://i.loli.net/2019/05/25/5ce8ee84c4d0230376.png" alt><br><img src="https://i.loli.net/2019/05/25/5ce8ee8600acd59452.png" alt></p>
 <p>2.查看和设置回滚段的管理模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW PARAMETER UNDO_MANAGEMENT</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8efc2af30021304.png" alt><br><figure class="highlight plain"><figcaption><span>将回滚段管理模式设置为手动管理</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter system set UNDO_MANAGEMENT = MANUAL</span><br><span class="line">SCOPE = SPFILE;</span><br></pre></td></tr></table></figure></p>
 <p>3.创建回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE [PUBLIC] ROLLBACK SEGMENT 回滚段名称</span><br><span class="line"> TABLESPACE T1</span><br><span class="line"> STORAGE 存储选项：&#123;</span><br><span class="line"> inital 5M</span><br><span class="line"> next 2M</span><br><span class="line"> maxextents unlimited</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <p>4.修改回滚段的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.设置状态</span><br><span class="line">alter rollback segment 回滚段名称 online</span><br><span class="line">2.手动收缩回滚段</span><br><span class="line">3.alter rollback segment 回滚段名称 shrink to 回滚段的初始大小</span><br></pre></td></tr></table></figure><br>5.删除回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter rollback segment 回滚段名称 offline //先脱机</span><br><span class="line">drop rollback segment 回滚段名称</span><br></pre></td></tr></table></figure></p>
-<p>二、数据库文件管理<br>1.N(System Change Number）</p>
+<hr>
+<h2 id="二、数据库文件管理"><a href="#二、数据库文件管理" class="headerlink" title="二、数据库文件管理"></a>二、数据库文件管理</h2><p>1.SCN(System Change Number）<br>(1).控制文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name from v$controlfile;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.loli.net/2019/05/30/5cefa06f1538063291.png" alt><br><img src="https://i.loli.net/2019/05/30/5cefa0d36563426778.png" alt><br><a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/CREATE-CONTROLFILE.html#GUID-9B389F28-C4D0-405D-BFE6-48237E8BD791" target="_blank" rel="noopener">CREATE CONTROLFILE官方文档</a></p>
+<p>(2).重做日志文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">col MEMBER  for A40</span><br><span class="line">select GROUP# ,MEMBER  from v$logfile(v$log);</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.loli.net/2019/05/30/5cefa3ac9b54b80023.png" alt></p>
+<p>(3).归档日志管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,log_mode from v$database;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.loli.net/2019/05/30/5cefa6d6ce67c56736.png" alt></p>
 
         </div>
       </div>

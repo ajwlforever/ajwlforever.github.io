@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.yqxblog.top/"/>
-  <updated>2019-05-25T07:47:44.289Z</updated>
+  <updated>2019-05-30T10:03:03.248Z</updated>
   <id>www.yqxblog.top/</id>
   
   <author>
@@ -17,22 +17,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Oracle---3</title>
-    <link href="www.yqxblog.top/Oracle/Oracle---3/"/>
-    <id>www.yqxblog.top/Oracle/Oracle---3/</id>
-    <published>2019-05-25T12:40:00.000Z</published>
-    <updated>2019-05-25T07:47:44.289Z</updated>
+    <title>Oracle--4</title>
+    <link href="www.yqxblog.top/Oracle/Oracle---4/"/>
+    <id>www.yqxblog.top/Oracle/Oracle---4/</id>
+    <published>2019-05-30T09:57:15.165Z</published>
+    <updated>2019-05-30T10:03:03.248Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a> <p><br></p><p>一、回滚段的管理<br>1.查看回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COL 回滚段名 FOR A20</span><br><span class="line">SELECT</span><br><span class="line">SEGMENT_NAME 回滚段名 , TABLESPACE_NAME 所在表空间，BYTES 大小</span><br><span class="line">FROM DBA_SEGMENTS WHERE SEGMENT_TYPE=&apos;ROLLBACK&apos;;</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8ed98a941589164.png" alt></p><p>还可以使用视图 V$ROLLNAME 和视图 V$ROLLSTAT<br><img src="https://i.loli.net/2019/05/25/5ce8ee84c4d0230376.png" alt><br><img src="https://i.loli.net/2019/05/25/5ce8ee8600acd59452.png" alt></p><p>2.查看和设置回滚段的管理模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW PARAMETER UNDO_MANAGEMENT</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8efc2af30021304.png" alt><br><figure class="highlight plain"><figcaption><span>将回滚段管理模式设置为手动管理</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter system set UNDO_MANAGEMENT = MANUAL</span><br><span class="line">SCOPE = SPFILE;</span><br></pre></td></tr></table></figure></p><p>3.创建回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE [PUBLIC] ROLLBACK SEGMENT 回滚段名称</span><br><span class="line"> TABLESPACE T1</span><br><span class="line"> STORAGE 存储选项：&#123;</span><br><span class="line"> inital 5M</span><br><span class="line"> next 2M</span><br><span class="line"> maxextents unlimited</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p><p>4.修改回滚段的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.设置状态</span><br><span class="line">alter rollback segment 回滚段名称 online</span><br><span class="line">2.手动收缩回滚段</span><br><span class="line">3.alter rollback segment 回滚段名称 shrink to 回滚段的初始大小</span><br></pre></td></tr></table></figure><br>5.删除回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter rollback segment 回滚段名称 offline //先脱机</span><br><span class="line">drop rollback segment 回滚段名称</span><br></pre></td></tr></table></figure></p><p>二、数据库文件管理<br>1.N(System Change Number）</p>]]></content>
+    <content type="html"><![CDATA[<p><escape> <a id="more"></a> <escape></escape></escape></p><h1 id="一、数据库安全管理"><a href="#一、数据库安全管理" class="headerlink" title="一、数据库安全管理"></a>一、数据库安全管理</h1><h3 id="1、Oracle认证方法"><a href="#1、Oracle认证方法" class="headerlink" title="1、Oracle认证方法"></a>1、Oracle认证方法</h3><p> 操作系统认证：在cmd下sqlplus / ，则不要要用户名和密码了。<br> 还有网络认证和数据库认证<br> 数据库管理员认证<br> connect as /sysdba;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;escape&gt;
+    
+    </summary>
+    
+      <category term="Oracle" scheme="www.yqxblog.top/categories/Oracle/"/>
+    
+    
+      <category term="Oracle" scheme="www.yqxblog.top/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 语法的几个简单使用</title>
+    <link href="www.yqxblog.top/normal/Markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%87%A0%E4%B8%AA%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>www.yqxblog.top/normal/Markdown语法的几个简单使用/</id>
+    <published>2019-05-30T07:44:00.000Z</published>
+    <updated>2019-05-30T07:44:16.646Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr><ul><li>sdsd</li><li>sdsd</li><li>sdsd</li></ul><p>1.ss<br>2.22<br>3.33</p><p><a href="www.baidu.com">baidu</a></p><blockquote><p>sdsdsdsda<br>sdsadsadasd</p></blockquote><p><em>sddsd</em></p><p><strong>sdsdsd</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p><table><thead><tr><th>Tables</th><th style="text-align:center">Are</th><th style="text-align:right">Cool</th></tr></thead><tbody><tr><td>col 3 is</td><td style="text-align:center">right-aligned</td><td style="text-align:right">$1600</td></tr><tr><td>col 2 is</td><td style="text-align:center">centered</td><td style="text-align:right">$12</td></tr><tr><td>zebra stripes</td><td style="text-align:center">are neat</td><td style="text-align:right">$1</td></tr><tr><td>zebra stripes</td><td style="text-align:center">are neat</td><td style="text-align:right">$1</td></tr></tbody></table><table><thead><tr><th>dog</th><th>bird</th><th>cat</th></tr></thead><tbody><tr><td>foo</td><td>foo</td><td>foo</td></tr><tr><td>bar</td><td>bar</td><td>bar</td></tr><tr><td>baz</td><td>baz</td><td>baz</td></tr></tbody></table><p>![][1]<br>[1]: <a href="http://latex.codecogs.com/gif.latex?\prod%20\(n_{i}\)+1" target="_blank" rel="noopener">http://latex.codecogs.com/gif.latex?\prod%20\(n_{i}\)+1</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;一、回滚段的管理&lt;br&gt;1.查看回滚段&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;lin
+        &lt;hr&gt;
+&lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;h2 id=&quot;二级标题&quot;&gt;&lt;a href=&quot;#二级标题&quot; class=&quot;headerlink&quot; title=&quot;二级标题
       
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle---3</title>
+    <link href="www.yqxblog.top/Oracle/Oracle---3/"/>
+    <id>www.yqxblog.top/Oracle/Oracle---3/</id>
+    <published>2019-05-25T12:40:00.000Z</published>
+    <updated>2019-05-30T09:56:43.712Z</updated>
+    
+    <content type="html"><![CDATA[回滚段的管理、数据库文件管理（控制文件，重做日志文件，归档文件） <a id="more"></a><h2 id="一、回滚段的管理"><a href="#一、回滚段的管理" class="headerlink" title="一、回滚段的管理"></a>一、回滚段的管理</h2><p>1.查看回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COL 回滚段名 FOR A20</span><br><span class="line">SELECT</span><br><span class="line">SEGMENT_NAME 回滚段名 , TABLESPACE_NAME 所在表空间，BYTES 大小</span><br><span class="line">FROM DBA_SEGMENTS WHERE SEGMENT_TYPE=&apos;ROLLBACK&apos;;</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8ed98a941589164.png" alt></p><p>还可以使用视图 V$ROLLNAME 和视图 V$ROLLSTAT<br><img src="https://i.loli.net/2019/05/25/5ce8ee84c4d0230376.png" alt><br><img src="https://i.loli.net/2019/05/25/5ce8ee8600acd59452.png" alt></p><p>2.查看和设置回滚段的管理模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW PARAMETER UNDO_MANAGEMENT</span><br></pre></td></tr></table></figure><br><img src="https://i.loli.net/2019/05/25/5ce8efc2af30021304.png" alt><br><figure class="highlight plain"><figcaption><span>将回滚段管理模式设置为手动管理</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter system set UNDO_MANAGEMENT = MANUAL</span><br><span class="line">SCOPE = SPFILE;</span><br></pre></td></tr></table></figure></p><p>3.创建回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE [PUBLIC] ROLLBACK SEGMENT 回滚段名称</span><br><span class="line"> TABLESPACE T1</span><br><span class="line"> STORAGE 存储选项：&#123;</span><br><span class="line"> inital 5M</span><br><span class="line"> next 2M</span><br><span class="line"> maxextents unlimited</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p><p>4.修改回滚段的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.设置状态</span><br><span class="line">alter rollback segment 回滚段名称 online</span><br><span class="line">2.手动收缩回滚段</span><br><span class="line">3.alter rollback segment 回滚段名称 shrink to 回滚段的初始大小</span><br></pre></td></tr></table></figure><br>5.删除回滚段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter rollback segment 回滚段名称 offline //先脱机</span><br><span class="line">drop rollback segment 回滚段名称</span><br></pre></td></tr></table></figure></p><hr><h2 id="二、数据库文件管理"><a href="#二、数据库文件管理" class="headerlink" title="二、数据库文件管理"></a>二、数据库文件管理</h2><p>1.SCN(System Change Number）<br>(1).控制文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name from v$controlfile;</span><br></pre></td></tr></table></figure></p><p><img src="https://i.loli.net/2019/05/30/5cefa06f1538063291.png" alt><br><img src="https://i.loli.net/2019/05/30/5cefa0d36563426778.png" alt><br><a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/CREATE-CONTROLFILE.html#GUID-9B389F28-C4D0-405D-BFE6-48237E8BD791" target="_blank" rel="noopener">CREATE CONTROLFILE官方文档</a></p><p>(2).重做日志文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">col MEMBER  for A40</span><br><span class="line">select GROUP# ,MEMBER  from v$logfile(v$log);</span><br></pre></td></tr></table></figure></p><p><img src="https://i.loli.net/2019/05/30/5cefa3ac9b54b80023.png" alt></p><p>(3).归档日志管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,log_mode from v$database;</span><br></pre></td></tr></table></figure></p><p><img src="https://i.loli.net/2019/05/30/5cefa6d6ce67c56736.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      回滚段的管理、数据库文件管理（控制文件，重做日志文件，归档文件）
     
     </summary>
     
@@ -447,50 +486,6 @@
     
     
       <category term="设计模式" scheme="www.yqxblog.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html引用css</title>
-    <link href="www.yqxblog.top/html%E7%9A%84%E5%AD%A6%E4%B9%A0/html%E5%BC%95%E7%94%A8css/"/>
-    <id>www.yqxblog.top/html的学习/html引用css/</id>
-    <published>2019-03-25T14:31:30.000Z</published>
-    <updated>2019-03-26T01:30:49.437Z</updated>
-    
-    <content type="html"><![CDATA[  to be or not to be ,thats a question <a id="more"></a><p><img src="https://i.loli.net/2019/03/25/5c9842529f2a1.png" alt></p><p>4种方式引用css样式表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. &lt;h style=&quot;line-height=40px&quot;&gt;&lt;/h&gt;</span><br><span class="line">2. &lt;style&gt;.h&#123;line-hejght:40px;&#125;&lt;/style&gt;</span><br><span class="line">3. &lt;style type=&quot;text/css&quot; &gt;&lt;!--@import url(xxx.css)--&gt;&lt;/style&gt;</span><br><span class="line">4. &lt;link rel=&quot;stylesheet&quot; href=&quot;xxx.css&quot; type=&quot;text/css&quot;/&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      to be or not to be ,thats a question
-    
-    </summary>
-    
-      <category term="html的学习" scheme="www.yqxblog.top/categories/html%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>webstorm 编写html的快捷键</title>
-    <link href="www.yqxblog.top/html%E7%9A%84%E5%AD%A6%E4%B9%A0/webstorm-%E7%BC%96%E5%86%99html%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>www.yqxblog.top/html的学习/webstorm-编写html的快捷键/</id>
-    <published>2019-03-25T03:51:27.000Z</published>
-    <updated>2019-03-26T01:31:22.305Z</updated>
-    
-    <content type="html"><![CDATA[  真理惟一可靠的标准就是永远自相符合。 —— 欧文 <a id="more"></a><p>下面是Webstorm的一些常用快捷键：</p><ol><li>ctrl + shift + n: 打开工程中的文件，目的是打开当前工程下任意目录的文件。</li><li>ctrl + j: 输出模板</li><li>ctrl + b: 跳到变量申明处</li><li>ctrl + alt + T: 围绕包裹代码(包括zencoding的Wrap with Abbreviation)</li><li>ctrl + []: 匹配 {}[]</li><li>ctrl + F12: 可以显示当前文件的结构</li><li>ctrl + x: 剪切(删除)行，不选中，直接剪切整个行，如果选中部分内容则剪切选中的内容</li><li>alt + left/right:标签切换</li><li>ctrl + r: 替换</li><li>ctrl + shift + up: 行移动</li><li>shift + alt + up: 块移动(if(){},while(){}语句块的移动)</li><li>ctrl + d: 行复制</li><li>ctrl + shift + ]/[: 选中块代码</li><li>ctrl + / : 单行注释</li><li>ctrl + shift + / : 块注释</li><li>ctrl + shift + i : 显示当前CSS选择器或者JS函数的详细信息</li><li>ctrl + ‘-/+’: 可以折叠项目中的任何代码块，它不是选中折叠，而是自动识别折叠。</li><li>ctrl + ‘.’: 折叠选中的代码的代码。<br><br>ctrl+/ 单行注释<br><br>ctrl+shift+/块注释<br><br>ctrl+shift+ +/-展开/折叠<br><br>ctrl+alt+L 格式化代码<br><br>ctrl+shift+ up/down 上下移动句子<br><br>Alt+回车 导入包,自动修正<br><br>Ctrl+N 查找类<br><br>Ctrl+Shift+N 查找文件<br><br>Ctrl+Alt+L 格式化代码<br><br>Ctrl+Alt+O 优化导入的类和包<br><br>Alt+Insert 生成代码(如get,set方法,构造函数等)<br><br>Ctrl+E或者Alt+Shift+C 最近更改的代码<br><br>Ctrl+R 替换文本<br><br>Ctrl+F 查找文本<br><br>Ctrl+Shift+Space 自动补全代码<br><br>Ctrl+空格 代码提示<br><br>Ctrl+Alt+Space 类名或接口名提示<br><br>Ctrl+P 方法参数提示<br><br>Ctrl+Shift+Alt+N 查找类中的方法或变量<br><br>Alt+Shift+C 对比最近修改的代码<br><br>Shift+F6 重构-重命名<br><br>Ctrl+Shift+先上键<br><br>Ctrl+X 删除行<br><br>Ctrl+D 复制行<br><br>Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/<em>…</em>/ ）<br><br>Ctrl+J 自动代码<br><br>Ctrl+E 最近打开的文件<br><br>Ctrl+H 显示类结构图<br><br>Ctrl+Q 显示注释文档<br><br>Alt+F1 查找代码所在位置<br><br>Alt+1 快速打开或隐藏工程面板<br>Ctrl+Alt+ left/right 返回至上次浏览的位置<br><br>Alt+ left/right 切换代码视图<br><br>Alt+ Up/Down 在方法间快速移动定位<br><br>Ctrl+Shift+Up/Down 代码向上/下移动。<br><br>F2 或Shift+F2 高亮错误或警告快速定位<br><br>代码标签输入完成后，按Tab，生成代码。<br><br>选中文本，按Ctrl+Shift+F7 ，高亮显示所有该文本，按Esc高亮消失。<br><br>Ctrl+W 选中代码，连续按会有其他效果<br><br>选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。<br><br>Ctrl+Up/Down 光标跳转到第一行或最后一行下<br><br>Ctrl+B 快速打开光标处的类或方法<br></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      真理惟一可靠的标准就是永远自相符合。 —— 欧文
-    
-    </summary>
-    
-      <category term="html的学习" scheme="www.yqxblog.top/categories/html%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="html" scheme="www.yqxblog.top/tags/html/"/>
     
   </entry>
   
