@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="虞启贤">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Oracle--上机实验1">
+  <meta property="og:description" content="虞启贤">
+  <meta property="og:site_name" content="虞启贤">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="www.yqxblog.top">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>虞启贤</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Oracle--上机实验1</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  目录
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/ajwlforever">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:2353350597@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/">
+                  
+                  rss
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 虞启贤</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-06-05</span>
+            <span class="time">23:30:11</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/Oracle/">Oracle</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Oracle/">#Oracle</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          建表。。。。游标的使用 <a id="more"></a> <escape>
+
+
+<escape><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select tablespace_name as 表空间名,SUM(bytes)</span><br><span class="line">from dba_data_files</span><br><span class="line">group by tablespace_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table t_stu(  </span><br><span class="line">  stuid      number(10)   primary key not null,  </span><br><span class="line">  stuname    varchar2(20) not null,  </span><br><span class="line">  stusex     varchar2(2)  default &apos;男&apos; check(stusex in(&apos;男&apos;,&apos;女&apos;))</span><br><span class="line">)TABLESPACE T1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table xs(  </span><br><span class="line">   xh      varchar2(26)   primary key not null ,</span><br><span class="line">   xs_name varchar2(20)   not null,</span><br><span class="line">   sex     varchar2(2)    default &apos;男&apos; check(sex in(&apos;男&apos;,&apos;女&apos;))</span><br><span class="line">)TABLESPACE T1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert  into xs(xh,xs_name,sex) values(20171746,&apos;虞启贤&apos;,&apos;男&apos;);</span><br><span class="line">insert  into xs(xh,xs_name,sex) values(20171828,&apos;张雪微&apos;,&apos;女&apos;);</span><br><span class="line">insert  into xs(xh,xs_name,sex) values(20171755,&apos;花解语&apos;,&apos;女&apos;);</span><br><span class="line">insert  into xs(xh,xs_name,sex) values(20171745,&apos;叶伏天&apos;,&apos;男&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add constraint 约束名 约束内容。</span><br><span class="line">for example:</span><br><span class="line">alter table xs add constraint pk primaey key xh;</span><br><span class="line">alter table xs add constraint ck     check(sex==&apos;男&apos;or sex ==&apos;女&apos;);  //and or </span><br><span class="line">alter table xs add constraint un_xh unique(xh); //列值唯一</span><br><span class="line">-增加主键     </span><br><span class="line">alter table 表名 add constraint 主键名 primary key (字段名1);</span><br><span class="line">-增加外键:     </span><br><span class="line">alter table 表名 add constraint 外键名 foreign key (字段名1) references 关联表 (字段名2);</span><br><span class="line">alter table xs move tablespace T2;         //  将xs表从表空间t1转移到t2；</span><br><span class="line">alter table xs modify(sex default &apos;男&apos;) ;  // 修改sex列的默认值</span><br><span class="line">drop table t_stu;                        //删除表</span><br><span class="line"> </span><br><span class="line"> CREATE PUBLIC SYNONYM x FOR xs;  //增加同义词 </span><br><span class="line"> DROP SYNONYM s_dept;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> 1.修改列的长度  </span><br><span class="line">      alter table dept modify loc varchar2(50);</span><br><span class="line">  </span><br><span class="line">2. 修改列的精度  </span><br><span class="line">      alter table employee_info modify empno number(2);</span><br><span class="line">  </span><br><span class="line">3. 修改列的数据类型  </span><br><span class="line">      alter table employee_info modify sex char(2); </span><br><span class="line"> </span><br><span class="line">4. 修改默认值  </span><br><span class="line">      alter table employee_info modify hiredate default sysdate+1; </span><br><span class="line"> </span><br><span class="line">5.禁用约束  </span><br><span class="line">  alter table employee_info disable constraint uq_emp_info;</span><br><span class="line">  </span><br><span class="line">6.启用约束  </span><br><span class="line">  alter table employee_info enable constraint uq_emp_info;  </span><br><span class="line">7.延迟约束  </span><br><span class="line">  alter table employee_info drop constraint fk_emp_info;  </span><br><span class="line">  alter table employee_info add constraint fk_emp_info foreign key(deptno)  </span><br><span class="line">        references dept(deptno)  </span><br><span class="line">  deferrable initially deferred;  </span><br><span class="line">8.向表中添加注释  </span><br><span class="line">  comment on table employee_info is &apos;information of employees&apos;;</span><br><span class="line">  </span><br><span class="line">9.向列添加注释  </span><br><span class="line">  comment on column employee_info.ename is &apos;the name of employees&apos;;  </span><br><span class="line">  comment on column dept.dname is &apos;the name of department&apos;;  </span><br><span class="line">10.清除表中所有数据  </span><br><span class="line">  truncate table employee_info; (DELETE FROM table_name或DELETE * FROM table_name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">declare </span><br><span class="line"> var sex :=&apos;男&apos;;</span><br><span class="line"> v_sex xs%rowtype</span><br><span class="line">begin</span><br><span class="line"> select * into x_sex form xs so</span><br><span class="line"> where so.sex=sex;</span><br></pre></td></tr></table></figure>
+<p>游标的使用：<br>游标的属性   返回值类型   意    义<br>%ROWCOUNT   整型  获得FETCH语句返回的数据行数<br>%FOUND  布尔型 最近的FETCH语句返回一行数据则为真，否则为假<br>%NOTFOUND   布尔型 与%FOUND属性返回值相反<br>%ISOPEN 布尔型 游标已经打开时值为真，否则为假<br>简单使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">DECLARE </span><br><span class="line">  v_xh NUMBER;</span><br><span class="line">  v_name VARCHAR2(26);</span><br><span class="line">  Cursor Mycur IS</span><br><span class="line">  Select xh,xs_name from xs </span><br><span class="line">  where xh=20171746</span><br><span class="line">  ;</span><br><span class="line">Begin </span><br><span class="line">   </span><br><span class="line">   open Mycur ;</span><br><span class="line">   Fetch Mycur into v_xh,v_name ; </span><br><span class="line">   close Mycur;</span><br><span class="line">   </span><br><span class="line">   dbms_output.put_line(&apos;学生学号：&apos;||v_xh||&apos; 学生姓名:&apos;||v_name||&apos; 已执行的数据行数：&apos;);</span><br><span class="line">   </span><br><span class="line">End;</span><br></pre></td></tr></table></figure></p>
+<p>1.隐式使用游标<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Begin</span><br><span class="line">  Update xs set sex=&apos;女&apos; where sex = &apos;男&apos;;</span><br><span class="line">  IF SQL%FOUND THEN</span><br><span class="line">    DBMS_OUTPUT.put_line(&apos;成功将男性De改为女性&apos;);</span><br><span class="line">    COMMIT;</span><br><span class="line">    ELSE</span><br><span class="line">     DBMS_OUTPUT.put_line(&apos;UPDATE 失败&apos;); </span><br><span class="line">     END IF;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">Update xs set sex=&apos;男&apos; where xh=20171746;</span><br><span class="line">SET serveroutput on;</span><br></pre></td></tr></table></figure></p>
+<p>2.用rowtype+游标 提取是男性的学生<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Declare</span><br><span class="line">     Cursor v_cursor IS</span><br><span class="line">     select * from xs s where s.sex = &apos;男&apos;;</span><br><span class="line">     v_xs v_cursor%ROWTYPE;  </span><br><span class="line">Begin</span><br><span class="line">     IF v_cursor%ISOPEN=false Then</span><br><span class="line">       open v_cursor;</span><br><span class="line">      END IF;</span><br><span class="line">      </span><br><span class="line">      Fetch  v_cursor into v_xs ;</span><br><span class="line">      </span><br><span class="line">      While v_cursor%Found</span><br><span class="line">        LOOP</span><br><span class="line">           DBMS_OUTPUT.PUT_LINE(&apos;学号：&apos;||v_xs.xh||&apos; 姓名：&apos;||v_xs.xs_name||&apos; 性别：&apos;||v_xs.sex); </span><br><span class="line">           DBMS_OUTPUT.PUT_LINE(&apos;已执行行数:&apos;||v_cursor%rowcount);</span><br><span class="line">            Fetch  v_cursor into v_xs ;</span><br><span class="line">        End LOOP;</span><br><span class="line">        </span><br><span class="line">        CLOSE v_cursor;  </span><br><span class="line">END;</span><br></pre></td></tr></table></figure></p>
+<p>3.显示学号大小前三的学生<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Declare </span><br><span class="line">    Cursor v_c IS</span><br><span class="line">     select * from xs order BY xh DESC;</span><br><span class="line">    v_xs v_c%rowtype;</span><br><span class="line">   </span><br><span class="line">BEGIN</span><br><span class="line">  open v_c;</span><br><span class="line">  </span><br><span class="line">    FOR I in 1..3 LOOP</span><br><span class="line">      Fetch v_c into v_xs;</span><br><span class="line">      dbms_output.put_line(&apos;学号：&apos;||v_xs.xh||&apos; 姓名：&apos;||v_xs.xs_name||&apos; 性别：&apos;||v_xs.sex);</span><br><span class="line">         END LOOP;</span><br><span class="line">         </span><br><span class="line">  close v_c;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure></p>
+<p>4.特殊的FOR循环形式<br>(1).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Declare </span><br><span class="line">    Cursor v_c IS</span><br><span class="line">     select * from xs order BY xh DESC;</span><br><span class="line">BEGIN</span><br><span class="line">  FOR v_xs in v_c LOOP</span><br><span class="line">    dbms_output.put_line(&apos;学号：&apos;||v_xs.xh||&apos; 姓名：&apos;||v_xs.xs_name||&apos; 性别：&apos;||v_xs.sex);</span><br><span class="line">   END LOOP;</span><br><span class="line">  ENd;</span><br></pre></td></tr></table></figure></p>
+<p>(2).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BEGIN</span><br><span class="line">  FOR v_xs in (select * from xs order BY xh DESC) LOOP</span><br><span class="line">    dbms_output.put_line(&apos;学号：&apos;||v_xs.xh||&apos; 姓名：&apos;||v_xs.xs_name||&apos; 性别：&apos;||v_xs.sex);</span><br><span class="line">   END LOOP;</span><br><span class="line">  ENd;</span><br></pre></td></tr></table></figure></p>
+<p>5.带参数的游标。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Declare</span><br><span class="line">     Cursor v_c(x_xh Number) IS</span><br><span class="line">     select * from xs where xh=x_xh ;</span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line">     v_xs v_c%rowtype;</span><br><span class="line">     </span><br><span class="line">BEgin</span><br><span class="line">     open v_c(20171755);</span><br><span class="line">     Fetch v_c into v_xs;</span><br><span class="line">     dbms_output.put_line(&apos;学号：&apos;||v_xs.xh||&apos; 姓名：&apos;||v_xs.xs_name||&apos; 性别：&apos;||v_xs.sex);</span><br><span class="line">     close v_c;</span><br><span class="line">End;</span><br></pre></td></tr></table></figure></p>
+<p>6.游标变量的使用<br>(1)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">SET ServerOutput ON;</span><br><span class="line">Declare</span><br><span class="line">Type cursor_type is ref cursor;</span><br><span class="line">c_1 cursor_type;</span><br><span class="line">r_1 xs%rowtype;</span><br><span class="line"></span><br><span class="line">Begin</span><br><span class="line">  open c_1 For select * from xs where xs.xh=&apos;20171746&apos;;</span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(&apos;已执行行数:&apos;||c_1%rowcount);</span><br><span class="line">  while c_1%found Loop</span><br><span class="line">    fetch c_1 into r_1;</span><br><span class="line">        DBMS_OUTPUT.PUT_LINE(&apos;已执行行数:&apos;||c_1%rowcount);</span><br><span class="line">       dbms_output.put_line(&apos;学号：&apos;||r_1.xh||&apos; 姓名：&apos;||r_1.xs_name||&apos; 性别：&apos;||r_1.sex);</span><br><span class="line">end loop;</span><br><span class="line">close c_1;</span><br><span class="line">End;</span><br></pre></td></tr></table></figure></p>
+<p>(2)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">SET ServerOutput ON;</span><br><span class="line">Declare</span><br><span class="line">Type cursor_type is ref cursor return xs%rowtype;</span><br><span class="line">c_1 cursor_type;</span><br><span class="line">r_1 xs%rowtype;</span><br><span class="line"></span><br><span class="line">Begin</span><br><span class="line">  open c_1 For select * from xs;</span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(&apos;已执行行数:&apos;||c_1%rowcount);</span><br><span class="line">For i in c_1 Loop</span><br><span class="line">   dbms_output.put_line(&apos;学号：&apos;||i.xh||&apos; 姓名：&apos;||i.xs_name||&apos; 性别：&apos;||i.sex);</span><br><span class="line">End Loop;</span><br><span class="line"></span><br><span class="line">close c_1;</span><br><span class="line">End;</span><br></pre></td></tr></table></figure></p>
+<p>(3)</p>
+</escape></escape>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

@@ -106,7 +106,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-05-30</span>
-            <span class="time">18:03:30</span>
+            <span class="time">23:30:11</span>
           </span>
           
           <!--  Categories  -->
@@ -128,9 +128,30 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p><escape> <a id="more"></a> <escape></escape></escape></p>
-<h1 id="一、数据库安全管理"><a href="#一、数据库安全管理" class="headerlink" title="一、数据库安全管理"></a>一、数据库安全管理</h1><h3 id="1、Oracle认证方法"><a href="#1、Oracle认证方法" class="headerlink" title="1、Oracle认证方法"></a>1、Oracle认证方法</h3><p> 操作系统认证：在cmd下sqlplus / ，则不要要用户名和密码了。<br> 还有网络认证和数据库认证<br> 数据库管理员认证<br> connect as /sysdba;</p>
+           <a id="more"></a> <escape>
+# 一、数据库安全管理
 
+### 1、Oracle认证方法
+ 操作系统认证：在cmd下sqlplus / ，则不要要用户名和密码了。
+ 还有网络认证和数据库认证
+ 数据库管理员认证
+ connect as /sysdba
+ 
+ 
+ 忘记DBA口令是简单修改口令的方法
+ <escape><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlplus as/sysdba</span><br><span class="line">alter user sus identified by NEWPWD;</span><br><span class="line">commit;</span><br><span class="line">conn sys /as sysdba</span><br></pre></td></tr></table></figure>
+<h3 id="2-用户管理"><a href="#2-用户管理" class="headerlink" title="2.用户管理"></a>2.用户管理</h3><h4 id="（1）-创建用户"><a href="#（1）-创建用户" class="headerlink" title="（1）.创建用户"></a>（1）.创建用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create user 用户名</span><br><span class="line">identified by 口令</span><br><span class="line">default tablespace 默认表空间</span><br><span class="line">temporary tablespace 临时表空间</span><br></pre></td></tr></table></figure>
+<h4 id="（2）-修改用户"><a href="#（2）-修改用户" class="headerlink" title="（2）.修改用户"></a>（2）.修改用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user 用户名 identified by NEWPWD  //修改密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user 用户名 password expire/lock/unlock //设置用户密码过期/锁定/解锁</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user 用户名 quata 表空间配额大小 on 表空间//位用户分配表空间配额</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user 用户名  //删除用户</span><br></pre></td></tr></table></figure>
+<h3 id="3-角色管理"><a href="#3-角色管理" class="headerlink" title="3.角色管理"></a>3.角色管理</h3><blockquote>
+<p>查看角色 select * from dba_roles;</p>
+</blockquote>
+<h4 id="1-创建角色"><a href="#1-创建角色" class="headerlink" title="(1).创建角色"></a>(1).创建角色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create role rolename identified by newwpd;</span><br></pre></td></tr></table></figure>
+<h4 id="（2）-指定用户角色"><a href="#（2）-指定用户角色" class="headerlink" title="（2）.指定用户角色"></a>（2）.指定用户角色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant role to user;   //指定角色</span><br><span class="line">example:  grant connect to userman;</span><br><span class="line">revoke role from user //回收角色</span><br></pre></td></tr></table></figure>
+<h4 id="（3）-修改角色"><a href="#（3）-修改角色" class="headerlink" title="（3）.修改角色"></a>（3）.修改角色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter role rolename not identified //取消rolename角色的密码验证</span><br><span class="line">drop role rolename //删除rolename角色</span><br></pre></td></tr></table></figure>
+<h3 id="4-权限管理"><a href="#4-权限管理" class="headerlink" title="4.权限管理"></a>4.权限管理</h3></escape></escape>
         </div>
       </div>
     </div>

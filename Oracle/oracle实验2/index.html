@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="虞启贤">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Oracle--上机实验2">
+  <meta property="og:description" content="虞启贤">
+  <meta property="og:site_name" content="虞启贤">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="www.yqxblog.top">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>虞启贤</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Oracle--上机实验2</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  目录
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/ajwlforever">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:2353350597@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/">
+                  
+                  rss
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 虞启贤</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-06-05</span>
+            <span class="time">23:30:11</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/Oracle/">Oracle</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Oracle/">#Oracle</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          程序块，程序包 <a id="more"></a> <escape>
+第一步：建表：
+<escape><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">drop table emp;</span><br><span class="line">drop table dept;</span><br><span class="line">create table dept(</span><br><span class="line">       deptno number(10) primary key,</span><br><span class="line">       dname varchar2(30),</span><br><span class="line">       loc varchar2(30)</span><br><span class="line">)</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">create table emp(</span><br><span class="line">       empno number(10) primary key,</span><br><span class="line">       ename varchar2(30),</span><br><span class="line">       job varchar2(30),</span><br><span class="line">       mgr varchar2(30),</span><br><span class="line">       hiredate number(10),</span><br><span class="line">       sal number(10),</span><br><span class="line">       comm number(10),</span><br><span class="line">       deptno number(10),</span><br><span class="line">       foreign key(deptno) references dept(deptno)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>第二步：向各表中插入数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">insert into dept values(1, &apos;技术部&apos; ,&apos;南泥湾&apos;);</span><br><span class="line">insert into dept values(2, &apos;SALES&apos; ,&apos;深圳市&apos;);</span><br><span class="line">insert into dept values(3, &apos;事业部&apos; ,&apos;北京市&apos;);</span><br><span class="line">insert into dept values(4, &apos;服务部&apos; ,&apos;延安&apos;);</span><br><span class="line">insert into dept values(5, &apos;生产部&apos; ,&apos;南京市&apos;);</span><br><span class="line">insert into dept values(6, &apos;宣传部&apos; ,&apos;上海市&apos;);</span><br><span class="line">insert into dept values(7, &apos;打杂部&apos; ,&apos;广州市&apos;);</span><br><span class="line">insert into dept values(8, &apos;司令部&apos; ,&apos;重庆市&apos;);</span><br><span class="line">insert into dept values(9, &apos;卫生部&apos; ,&apos;长沙市&apos;);</span><br><span class="line">insert into dept values(10, &apos;文化部&apos; ,&apos;武冈市&apos;);</span><br><span class="line">insert into dept values(11, &apos;娱乐部&apos; ,&apos;纽约&apos;);</span><br><span class="line">insert into dept values(12, &apos;管理部&apos; ,&apos;伦敦&apos;);</span><br><span class="line">insert into dept values(13, &apos;行政部&apos; ,&apos;天津市&apos;);</span><br><span class="line">select * from dept;</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">insert into emp values(1, &apos;关羽羽&apos;, &apos;CLERK&apos; ,&apos;刘备备&apos;, 20011109, 2000, 1000, 3);</span><br><span class="line">insert into emp values(2, &apos;SMITH&apos;, &apos;CLERK&apos; ,&apos;刘备备&apos;, 20120101, 2000, 800, 6);</span><br><span class="line">insert into emp values(3, &apos;刘备备&apos;, &apos;MANAGER&apos; ,&apos;宋祖英&apos;, 20080808, 9000, 4000, 3);</span><br><span class="line">insert into emp values(4, &apos;TOM&apos;, &apos;ENGINEER&apos; ,&apos;Steve&apos;, 20050612, 3000, 1000, 1);</span><br><span class="line">insert into emp values(5, &apos;Steve&apos;, &apos;MANAGER&apos; ,&apos;宋祖英&apos;, 20110323, 80000, 9000, 1);</span><br><span class="line">insert into emp values(6, &apos;张飞飞&apos;, &apos;CLERK&apos; ,&apos;刘备备&apos;, 20101010, 2000, 1000, 3);</span><br><span class="line">insert into emp values(7, &apos;SCOTT&apos;, &apos;CLERK&apos; ,&apos;刘备备&apos;, 20071204, 2000, 1000, 3);</span><br><span class="line">insert into emp values(8, &apos;宋祖英&apos;, &apos;Boss&apos; ,&apos;无&apos;, 20060603, 2000, 1000, 8);</span><br><span class="line">insert into emp values(9, &apos;曹仁人&apos;, &apos;SALESMAN&apos; ,&apos;曹操操&apos;, 20120130, 2000, 1000, 2);</span><br><span class="line">insert into emp values(10, &apos;曹操操&apos;, &apos;MANAGER&apos; ,&apos;宋祖英&apos;,20090815, 2000, 1000, 2);</span><br><span class="line">insert into emp values(11, &apos;酱油哥&apos;, &apos;HAPI&apos; ,&apos;XXX&apos;,20090215, 3, 1, 2);</span><br></pre></td></tr></table></figure>
+<p>游标更新操作 将所有工资位1000以下的变成1500 所有大于1000的乘以1.5 所有大于10000的变成10000<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">SET ServerOutput ON;</span><br><span class="line">Declare </span><br><span class="line">  cursor c_1 is </span><br><span class="line">         select empno,sal from emp</span><br><span class="line">         for update of sal nowait;</span><br><span class="line">  v_sal emp.sal%type;</span><br><span class="line">  </span><br><span class="line">Begin</span><br><span class="line">  for v_1 in c_1 </span><br><span class="line">    Loop</span><br><span class="line">      if(v_1.sal&lt;=1000) then v_sal:=1500;</span><br><span class="line">      else </span><br><span class="line">        v_sal :=v_1.sal*1.5;</span><br><span class="line">        if(v_sal&gt;10000)then v_sal := 10000;</span><br><span class="line">      end if;</span><br><span class="line">    end if;</span><br><span class="line">    update emp set sal=v_sal where current of c_1;</span><br><span class="line">    end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure></p>
+<p>程序过程<br>：</p>
+<p>1.简单的procedure<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> select empno,ename from emp;</span><br><span class="line"></span><br><span class="line">SET ServerOutput ON;</span><br><span class="line">create or replace procedure update_emp as</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">  update emp set ename=&apos;关羽&apos; where empno =1; </span><br><span class="line">end update_emp;</span><br><span class="line"></span><br><span class="line">Begin </span><br><span class="line">  update_emp();</span><br><span class="line">End;</span><br></pre></td></tr></table></figure></p>
+<p>2.有程序包的procedure<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create or replace package test1 </span><br><span class="line">is</span><br><span class="line">  procedure t1;</span><br><span class="line">  procedure t2;</span><br><span class="line">  function t3 return number;</span><br><span class="line"></span><br><span class="line">end test1;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">create or replace package body test1 </span><br><span class="line"></span><br><span class="line">as</span><br><span class="line">    procedure t1  as </span><br><span class="line">         begin    </span><br><span class="line">          </span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(sysdate);</span><br><span class="line">         end;</span><br><span class="line">    procedure t2 as</span><br><span class="line">      begin</span><br><span class="line">         update emp set ename=&apos;关羽&apos; where empno =1;</span><br><span class="line">         end;</span><br><span class="line">    function t3  return number is</span><br><span class="line">      begin</span><br><span class="line">         return 1;</span><br><span class="line">         end;</span><br><span class="line">         </span><br><span class="line">end test1;</span><br><span class="line">extc test1.t1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SET ServerOutput ON;</span><br><span class="line">Begin </span><br><span class="line">  test1.t1();</span><br><span class="line">End;</span><br><span class="line">SET ServerOutput ON;</span><br><span class="line">Begin </span><br><span class="line">  test1.t2();</span><br><span class="line">End;</span><br><span class="line">SET ServerOutput ON;</span><br><span class="line">Begin </span><br><span class="line">  test1.t3();</span><br><span class="line">End;</span><br></pre></td></tr></table></figure>
+<p>select avg(sal),count(*) from emp;</p>
+<p>1.程序块 找出deptno=？ 的平均工资和人数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create or replace procedure return_deptinfo</span><br><span class="line">(</span><br><span class="line"> p_deptno in emp.deptno%type,</span><br><span class="line"> p_avgsal out emp.sal%type,</span><br><span class="line"> p_count out emp.sal%type</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line">as</span><br><span class="line">begin</span><br><span class="line">    select avg(sal),count(*)  into p_avgsal,p_count from emp</span><br><span class="line">    where</span><br><span class="line">    deptno = p_deptno ;</span><br><span class="line">end return_deptinfo;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SET ServerOutput ON;</span><br><span class="line">Declare </span><br><span class="line">   p_deptno  emp.deptno%type := 1;</span><br><span class="line">   p_avgsal  emp.sal%type;</span><br><span class="line">   p_count  emp.sal%type;</span><br><span class="line">Begin </span><br><span class="line">  return_deptinfo(p_deptno,p_avgsal,p_count);</span><br><span class="line">   DBMS_OUTPUT.PUT_LINE(p_avgsal||&apos;;&apos;||p_count);</span><br><span class="line">End;</span><br></pre></td></tr></table></figure>
+<p>2.找到no中比平均工资高的员工并显示出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">create or replace procedure show_emp</span><br><span class="line">(</span><br><span class="line"> p_deptno in emp.deptno%type</span><br><span class="line">)</span><br><span class="line">as</span><br><span class="line">v_sal emp.sal%type;</span><br><span class="line">Begin</span><br><span class="line">   select avg(sal) into v_sal from emp where deptno = p_deptno;</span><br><span class="line">   DBMS_OUTPUT.PUT_LINE(p_deptno||&apos;的平均工资：&apos;||v_sal);</span><br><span class="line">   </span><br><span class="line">     DBMS_OUTPUT.PUT_LINE(&apos;P_deptno为&apos;||p_deptno||&apos;中比平均工资高的&apos;);</span><br><span class="line">   for v_emp in(select * from emp where</span><br><span class="line">      deptno=p_deptno AND sal&gt;v_sal )</span><br><span class="line">      Loop</span><br><span class="line">        DBMS_OUTPUT.PUT_LINE(&apos;empno：&apos;||v_emp.empno||&apos;name： &apos;||v_emp.ename);</span><br><span class="line">      end Loop;</span><br><span class="line">end show_emp;</span><br><span class="line">SET ServerOutput ON;</span><br><span class="line">Declare </span><br><span class="line">   p_deptno  emp.deptno%type := 1;</span><br><span class="line">  Begin  </span><br><span class="line">    show_emp(p_deptno);</span><br><span class="line">    End;</span><br></pre></td></tr></table></figure></p>
+</escape></escape>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
