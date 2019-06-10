@@ -1,214 +1,614 @@
 <!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="虞启贤">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="虞启贤">
-  <meta property="og:description" content="虞启贤">
-  <meta property="og:site_name" content="虞启贤">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="www.yqxblog.top">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Site Title -->
-  <title>虞启贤</title>
+    <title>
+        
+        虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.dark.css">
-
-  <!-- Google Analytics -->
-  
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 </head>
 
-  <body>
-    <!-- Archive Header -->
-<!-- Page Header -->
+<body>
 
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">Blog Archives</p>
-          <p class="subtitle"></p>
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
         </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
+        <div class="name">
+            <i>虞启贤</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
                 <a href="/">
-                  
-                  主页
-                  
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
                 </a>
-              </li>
-            
-              <li>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li class="active">
                 <a href="/archives">
-                  
-                  目录
-                  
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
                 </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/ajwlforever">
-                  
-                  Github
-                  
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
                 </a>
-              </li>
+            </li>
             
-              <li>
-                <a href="mailto:2353350597@qq.com">
-                  
-                  Email
-                  
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
                 </a>
-              </li>
+            </li>
             
-              <li>
-                <a href="/">
-                  
-                  rss
-                  
-                </a>
-              </li>
-            
-          </ul>
+        </ul>
+    </div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
         </div>
-      </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
     </div>
-  </div>
-</header>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
 
-<!-- Archive List -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      
-        <div class="archive-item">
-  <a href="/Unity/Unity_01/" class="post-title">
-    Unity---做塔防小Demo时的总结。
-  </a>
-  <div class="date text-muted">Posted on 2019-03-27 23:10:00</div>
+
+<!-- 归档列表 -->
+
+<div class="archives-container">
+
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
+                    <span class="tag-text">2019</span>
+                </span>
+    <ul>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>06-05</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Oracle/oracle实验2/">
+                        <span>
+                            Oracle--上机实验2
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>06-05</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Oracle/oracle实验/">
+                        <span>
+                            Oracle--上机实验1
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>05-30</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Oracle/Oracle---4/">
+                        <span>
+                            Oracle--4
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>05-30</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/normal/Markdown语法的几个简单使用/">
+                        <span>
+                            Markdown 语法的几个简单使用
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>05-25</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Oracle/Oracle---3/">
+                        <span>
+                            Oracle---3
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>05-16</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Oracle/Oracle---2/">
+                        <span>
+                            Oracle---2
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>05-16</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Oracle/Oracle---1/">
+                        <span>
+                            Oracle---1
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>05-09</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/jQuery/jQuery的学习--8/">
+                        <span>
+                            jQuery的学习--8
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>05-08</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/jQuery/jQuery的学习--7/">
+                        <span>
+                            jQuery的学习--7
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-28</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/jQuery/jQuery的学习--6/">
+                        <span>
+                            jQuery的学习--6
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-26</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/jQuery/jQuery的学习--5/">
+                        <span>
+                            jQuery的学习--5
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-26</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/jQuery/jQuery的学习--4/">
+                        <span>
+                            jQuery的学习--4
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-26</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/jQuery/jQuery的学习--3/">
+                        <span>
+                            jQuery的学习--3
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-25</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/jQuery/jQuery的学习--2/">
+                        <span>
+                            JQuery的学习--2
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-23</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/jQuery/JQuery的学习--1/">
+                        <span>
+                            JQuery的学习--1
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-21</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/html+css_!/">
+                        <span>
+                            html+css--1
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-17</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/数据结构/数据结构--1/">
+                        <span>
+                            数据结构--1
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-10</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Unity/C/Unity_02/">
+                        <span>
+                            Unity 2d Memory Game 小结。
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-04</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html/博客html的总结/">
+                        <span>
+                            html+css写简单博客界面的总结
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>04-01</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/java/4月1日mysql+dao/">
+                        <span>
+                            dao+mysql
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>03-27</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Unity/Unity_01/">
+                        <span>
+                            Unity---做塔防小Demo时的总结。
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>03-26</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/设计模式/装饰模式/">
+                        <span>
+                            设计模式-装饰模式-复杂的奖金计算
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>03-25</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html的学习/html引用css/">
+                        <span>
+                            html引用css
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>03-25</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html的学习/webstorm-编写html的快捷键/">
+                        <span>
+                            webstorm 编写html的快捷键
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>03-24</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/html的学习/html-：：before-：：after的运用/">
+                        <span>
+                            html ：before ：after的运用
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>03-23</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/hexo的学习/虞启贤的第二篇/">
+                        <span>
+                            Hexo的认识-1
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li>
+            <span>03-23</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/diary/hello-world/">
+                        <span>
+                            虞启贤的第一篇博客文章
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+
+    </ul>
 </div>
 
-      
-        <div class="archive-item">
-  <a href="/设计模式/装饰模式/" class="post-title">
-    设计模式-装饰模式-复杂的奖金计算
-  </a>
-  <div class="date text-muted">Posted on 2019-03-26 18:10:30</div>
 </div>
-
-      
-        <div class="archive-item">
-  <a href="/html的学习/html引用css/" class="post-title">
-    html引用css
-  </a>
-  <div class="date text-muted">Posted on 2019-03-25 22:31:30</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/html的学习/webstorm-编写html的快捷键/" class="post-title">
-    webstorm 编写html的快捷键
-  </a>
-  <div class="date text-muted">Posted on 2019-03-25 11:51:27</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/html的学习/html-：：before-：：after的运用/" class="post-title">
-    html ：before ：after的运用
-  </a>
-  <div class="date text-muted">Posted on 2019-03-24 20:31:30</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/hexo的学习/虞启贤的第二篇/" class="post-title">
-    Hexo的认识-1
-  </a>
-  <div class="date text-muted">Posted on 2019-03-23 23:47:05</div>
-</div>
-
-      
-        <div class="archive-item">
-  <a href="/diary/hello-world/" class="post-title">
-    虞启贤的第一篇博客文章
-  </a>
-  <div class="date text-muted">Posted on 2019-03-23 20:31:30</div>
-</div>
-
-      
 
     </div>
-  </div>
-</div>
-<!-- Pagination -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
-      <ul class="pagination">
-          
-              <li class="previous">
-                <a href="/archives/2019/page/2/">
-                  <span class="symbol-left">&lt;</span>
-                  <span>PREV</span>
-                </a>
-              </li>
-          
-          
-      </ul>
-    </div>
-  </div>
 </div>
 
 
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        </p><p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
-    </div>
-  </div>
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
+
+
+</body>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = false
 </script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  </body>
+
+
+
 </html>
-

@@ -1,134 +1,143 @@
 <!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="虞启贤">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="数据结构--1">
-  <meta property="og:description" content="虞启贤">
-  <meta property="og:site_name" content="虞启贤">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="www.yqxblog.top">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Site Title -->
-  <title>虞启贤</title>
+    <title>
+        
+        数据结构--1 - 虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.dark.css">
-
-  <!-- Google Analytics -->
-  
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body>
 
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">数据结构--1</p>
-          <p class="subtitle"></p>
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
         </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  主页
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  目录
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/ajwlforever">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:2353350597@qq.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/">
-                  
-                  rss
-                  
-                </a>
-              </li>
-            
-          </ul>
+        <div class="name">
+            <i>虞启贤</i>
         </div>
-      </div>
     </div>
-  </div>
-</header>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By 虞启贤</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2019-04-17</span>
-            <span class="time">23:30:11</span>
-          </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/数据结构/">数据结构</a>
-</span>
-          
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
         </div>
-        <!-- Tags -->
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
         
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/数据结构/">#数据结构</a>
 
 
-          </div>
+<div class="post-container">
+    <div class="post-title">
+        数据结构--1
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-04-17 20:37:00</span></span>
         
-        <!-- Post Main Content -->
-        <div class="post-content">
-            顺序表+栈+链栈 <a id="more"></a>
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#数据结构" title="数据结构">数据结构</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+          顺序表+栈+链栈 <a id="more"></a>
 <p>——、顺序表<br>顺序表是在计算机内存中以数组的形式保存的线性表，线性表的顺序存储是指用一组地址连续的存储单元依次存储线性表中的各个元素、使得线性表中在逻辑结构上相邻的数据元素存储在相邻的物理存储单元中，即通过数据元素物理存储的相邻关系来反映数据元素之间逻辑上的相邻关系，采用顺序存储结构的线性表通常称为顺序表。顺序表是将表中的结点依次存放在计算机内存中一组地址连续的存储单元中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line">const int MaxSize =100;</span><br><span class="line"></span><br><span class="line">template&lt;typename T&gt; class SeqList</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public :</span><br><span class="line">    SeqList()&#123;;&#125;</span><br><span class="line">    SeqList(int x)&#123;length=x;&#125;</span><br><span class="line">    SeqList(T a[],int n);</span><br><span class="line">    ~SeqList()&#123;delete [] data;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    T Get(int i);</span><br><span class="line">    int Length()&#123;return length;&#125;</span><br><span class="line">    int Locate(T x);</span><br><span class="line">    void Insert(int i,T x);</span><br><span class="line">    T Delete(int x);</span><br><span class="line">    void PrintList();</span><br><span class="line">    T Max();</span><br><span class="line">    T Min();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    bool isEmpty()&#123;if(length==0)return true;else return false;&#125;</span><br><span class="line">    bool isFull()&#123;if(length==MaxSize)return true;else return false;&#125;</span><br><span class="line">    private:</span><br><span class="line">    T data[MaxSize];</span><br><span class="line">    int length;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">template&lt;typename T&gt; T SeqList&lt;T&gt;::Max()</span><br><span class="line">&#123;</span><br><span class="line">    T max=-1111111;</span><br><span class="line">    for(int i=0;i&lt;length ;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(data[i]&gt;max)max=data[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">template&lt;typename T&gt; T SeqList&lt;T&gt;::Min()</span><br><span class="line">&#123;</span><br><span class="line">    T min=1111111;</span><br><span class="line">    for(int i=0;i&lt;length ;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(data[i]&lt;min)min=data[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return min;</span><br><span class="line">&#125;</span><br><span class="line">template&lt;typename T&gt; SeqList&lt;T&gt;::SeqList(T a[],int n)</span><br><span class="line">&#123;</span><br><span class="line">   if(n&gt;MaxSize)throw &quot;参数违法&quot;;</span><br><span class="line">   for(int i = 0;i&lt;n;i++)</span><br><span class="line">   &#123;</span><br><span class="line">       data[i] = a[i];</span><br><span class="line">   &#125;</span><br><span class="line">   length = n;</span><br><span class="line">&#125;</span><br><span class="line">template&lt;typename T&gt; T SeqList&lt;T&gt;::Get(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&lt;1||i&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">     throw &quot;位置错误&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    return data[i-1];</span><br><span class="line">&#125;</span><br><span class="line">template&lt;typename T&gt; int SeqList&lt;T&gt;::Locate(T x)</span><br><span class="line">&#123;</span><br><span class="line"> for(int i=0 ;i&lt;length;i++)</span><br><span class="line"> &#123;</span><br><span class="line">     if(data[i]=x)return i+1;</span><br><span class="line"> &#125;</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br><span class="line">template&lt;typename T&gt; void SeqList&lt;T&gt;::Insert(int i,T x)</span><br><span class="line">&#123;</span><br><span class="line">   if(length&gt;=MaxSize)throw &quot;上溢&quot;;</span><br><span class="line">   if(i&lt;1||i&gt;length) throw &quot;位置&quot;;</span><br><span class="line">    for(int j = i-1; j&lt;length ;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        data[j+1]=data[j];</span><br><span class="line">    &#125;</span><br><span class="line">    data[i-1]=x;</span><br><span class="line">&#125;</span><br><span class="line">template&lt;typename T&gt; T SeqList&lt;T&gt;::Delete(int x)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    if(length==0) throw&quot;下溢&quot;;</span><br><span class="line">    if(x&lt;1||x&gt;length) throw &quot;位置&quot;;</span><br><span class="line">    T xx=data[x-1];</span><br><span class="line">    for(int j = x-1; j&lt;length ;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        data[j]=data[j+1];</span><br><span class="line">    &#125;</span><br><span class="line">    length--;</span><br><span class="line">    return xx;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">template&lt;typename T&gt; void SeqList&lt;T&gt;::PrintList()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;打印：&quot;;</span><br><span class="line"></span><br><span class="line">    for(int i=0;i&lt;length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;data[i]&lt;&lt;&quot; &quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[10];</span><br><span class="line">    cout&lt;&lt;&quot;请输入10个数：&quot;&lt;&lt;endl;</span><br><span class="line">    for(int i=0;i&lt;10;i++)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        int x;</span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line"></span><br><span class="line">        a[i]=x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    SeqList&lt;int&gt; se(a,10) ;</span><br><span class="line"></span><br><span class="line">    se.PrintList();</span><br><span class="line">    cout&lt;&lt;&quot;最大值：&quot;&lt;&lt;se.Max()&lt;&lt;endl;</span><br><span class="line">        cout&lt;&lt;&quot;最小值：&quot;&lt;&lt;se.Min()&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>二、栈</p>
@@ -137,42 +146,93 @@
 <p>三、链栈</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    T data;</span><br><span class="line">    Node&lt;T&gt;*next;</span><br><span class="line">&#125;Node;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">class LinkQueue</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    LinkQueue();</span><br><span class="line">    ~LinkQueue()&#123;delete front,rear;&#125;</span><br><span class="line">    void EnQueue(T x);</span><br><span class="line">    T DeQueue();</span><br><span class="line">    T GetQueue();</span><br><span class="line">    int Empty();</span><br><span class="line"> private:</span><br><span class="line">    Node&lt;T&gt; *front,*rear;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">LinkQueue&lt;T&gt;::LinkQueue()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;ss&quot;;</span><br><span class="line">  front=rear=NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">void LinkQueue&lt;T&gt;::EnQueue(T x)</span><br><span class="line">&#123;</span><br><span class="line"> cout&lt;&lt;&quot;ss&quot;;</span><br><span class="line">   Node&lt;T&gt;*s=new Node&lt;T&gt;();</span><br><span class="line">    s-&gt;data=x;</span><br><span class="line">    s-&gt;next=NULL;</span><br><span class="line"></span><br><span class="line">   if(front==NULL)</span><br><span class="line">&#123;</span><br><span class="line">     front=rear=new Node&lt;T&gt;();</span><br><span class="line">    front-&gt;next=s;</span><br><span class="line">    rear=front-&gt;next;</span><br><span class="line">    rear=rear-&gt;next;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> else   rear=rear-&gt;next=s;</span><br><span class="line">    cout&lt;&lt;&quot;ss&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">T LinkQueue&lt;T&gt;::DeQueue()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    if(rear==front) throw&quot;下溢&quot;;</span><br><span class="line">    Node&lt;T&gt;*p;</span><br><span class="line">    T x;</span><br><span class="line">    p=front-&gt;next;</span><br><span class="line">    x=p-&gt;data;</span><br><span class="line"></span><br><span class="line">     front-&gt;next=p-&gt;next;</span><br><span class="line"></span><br><span class="line">      if(p-&gt;next==NULL) rear=front;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    p-&gt;next=NULL;</span><br><span class="line">    delete p;</span><br><span class="line"></span><br><span class="line">    return x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">T LinkQueue&lt;T&gt;::GetQueue()</span><br><span class="line">&#123;</span><br><span class="line">    return front-&gt;next-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">int LinkQueue&lt;T&gt;::Empty()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    if(front==rear) return 1;</span><br><span class="line">    else return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    LinkQueue&lt;int&gt; link;</span><br><span class="line"></span><br><span class="line">    link.EnQueue(1);</span><br><span class="line">   // cout&lt;&lt;&quot;队头元素为：&quot;&lt;&lt;link.GetQueue()&lt;&lt;endl;</span><br><span class="line">   // link.EnQueue(3);</span><br><span class="line"></span><br><span class="line">    //cout&lt;&lt;&quot;队头元素为：&quot;&lt;&lt;link.GetQueue()&lt;&lt;endl;</span><br><span class="line">   // cout&lt;&lt;&quot;队列是否为空：&quot;&lt;&lt;link.Empty()&lt;&lt;endl;</span><br><span class="line">   // cout&lt;&lt; link.DeQueue()&lt;&lt;endl;</span><br><span class="line">    //cout&lt;&lt; link.DeQueue()&lt;&lt;endl;</span><br><span class="line">   // cout&lt;&lt;&quot;队列是否为空：&quot;&lt;&lt;link.Empty()&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+        
+        <br>
+        <div id="comment-container">
         </div>
-      </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
     </div>
-  </div>
-</article>
+</div>
 
-
-
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        </p><p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
     </div>
-  </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
+
+
+</body>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
 </script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  </body>
+
+
+
 </html>
-

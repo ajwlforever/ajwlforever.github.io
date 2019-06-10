@@ -1,134 +1,146 @@
 <!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="虞启贤">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="jQuery的学习--4">
-  <meta property="og:description" content="虞启贤">
-  <meta property="og:site_name" content="虞启贤">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="www.yqxblog.top">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Site Title -->
-  <title>虞启贤</title>
+    <title>
+        
+        jQuery的学习--4 - 虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.dark.css">
-
-  <!-- Google Analytics -->
-  
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body>
 
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">jQuery的学习--4</p>
-          <p class="subtitle"></p>
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
         </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  主页
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  目录
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/ajwlforever">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:2353350597@qq.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/">
-                  
-                  rss
-                  
-                </a>
-              </li>
-            
-          </ul>
+        <div class="name">
+            <i>虞启贤</i>
         </div>
-      </div>
     </div>
-  </div>
-</header>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By 虞启贤</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2019-04-26</span>
-            <span class="time">23:30:11</span>
-          </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/html/">html</a> / <a href="/categories/html/jQuery/">jQuery</a>
-</span>
-          
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
         </div>
-        <!-- Tags -->
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
         
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/jQuery/">#jQuery</a> <a class="tag" href="/tags/html/">#html</a>
 
 
-          </div>
+<div class="post-container">
+    <div class="post-title">
+        jQuery的学习--4
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-04-26 13:40:00</span></span>
         
-        <!-- Post Main Content -->
-        <div class="post-content">
-          事件的绑定,jQuery事件的冒泡和默认的行为，jQuery事件自动触发，自定义事件，jQuery的事件委托 <a id="more"></a>
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#jQuery" title="jQuery">jQuery</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#html" title="html">html</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        事件的绑定,jQuery事件的冒泡和默认的行为，jQuery事件自动触发，自定义事件，jQuery的事件委托 <a id="more"></a>
 <p><br></p>
 <p>一、事件的绑定与解绑<br>1.$(“button”).click(function(){});<br>2.$(“button”).on(“click”,function(){});<br>第一种效率高，部分事件jQuery没实现，所以不能添加。<br>第二种效率低，时间全<br>两者都可以添加多个相同或多个不同内容的事件，且不会被覆盖</p>
 <p>$(“button”).off();<br>//不传递参数，会移除所有事件<br>$(“button”).off(“click”);<br>//传递一个参数，会移除所有指定类型的事件<br>$(“button”).off(“click”，test);<br>//传递二个参数，会溢出指定类型的指定事件</p>
@@ -148,42 +160,93 @@
 <p>六、jQuery移入移出事件<br>//子元素移入移出也会触发父元素事件。<br>$(“”).mouserover();<br>$(“”).mouserout();<br>//不会触发父元素的方法<br>$(“”).mouseenter();<br>$(“”).mouseleave();<br>$(“”).mousehover(function(){},function(){});//内部就是enter和leave<br>一个参数就是既监听移入又监听移出</p>
 <p>实例： Tab选项卡<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Tab选项卡&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box&#123;</span><br><span class="line">            width:440px;</span><br><span class="line">            height:300px;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">            border: 1px solid black;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .nav&gt;ul&gt;li&#123;</span><br><span class="line">            list-style: none;</span><br><span class="line">            width:110px;</span><br><span class="line">            height:60px;</span><br><span class="line">            background: orange;</span><br><span class="line">            line-height: 60px;</span><br><span class="line">            float: left;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .nav&gt;ul&gt;.current&#123;</span><br><span class="line">            background: #ccc;</span><br><span class="line">        &#125;</span><br><span class="line">        .img&gt;li</span><br><span class="line">        &#123;</span><br><span class="line">            list-style: none;</span><br><span class="line">            display: none;</span><br><span class="line">        &#125;</span><br><span class="line">        .img&gt;.show&#123;</span><br><span class="line">            display: block;</span><br><span class="line">        &#125;</span><br><span class="line">        .img&gt;li&gt;img&#123;</span><br><span class="line">            width:440px ;</span><br><span class="line">            height: 240px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">     &lt;script src=&quot;jQuery/js/jquery-3.4.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">         &lt;script&gt;</span><br><span class="line">             $(function()&#123;</span><br><span class="line">               //编写jQuery相关代码</span><br><span class="line">                  var $navli =$(&quot;.nav&gt;ul&gt;li&quot;);</span><br><span class="line">                 $navli.mouseenter(</span><br><span class="line">                     function () &#123;</span><br><span class="line">                         $(this).siblings().removeClass();</span><br><span class="line">                         $(this).addClass(&quot;current&quot;);</span><br><span class="line">                         var index = $(this).index();</span><br><span class="line">                         var $img = $(&quot;.img&gt;li&quot;).eq(index);</span><br><span class="line">                         $img.siblings().removeClass(&quot;show&quot;);</span><br><span class="line">                         $img.addClass(&quot;show&quot;);</span><br><span class="line">                     &#125;</span><br><span class="line">                 );</span><br><span class="line"></span><br><span class="line">             &#125;);</span><br><span class="line">         &lt;/script&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;nav&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li class=&quot;current&quot;&gt;万水千山&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;大雪无痕&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;雨中氤氲&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;雾气弥漫&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;ul class=&quot;img&quot;&gt;</span><br><span class="line">        &lt;li class=&quot;show&quot;&gt;&lt;img src=&quot;img/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;img src=&quot;img/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;img src=&quot;img/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;img src=&quot;img/4.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 
+        
+        <br>
+        <div id="comment-container">
         </div>
-      </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
     </div>
-  </div>
-</article>
+</div>
 
-
-
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        </p><p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
     </div>
-  </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
+
+
+</body>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
 </script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  </body>
+
+
+
 </html>
-
