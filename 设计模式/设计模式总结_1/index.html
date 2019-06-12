@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        设计模式之创建型 - 虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
+        </div>
+        <div class="name">
+            <i>虞启贤</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#何谓创建型模式"><span class="toc-text">何谓创建型模式?</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。"><span class="toc-text">1.创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。"><span class="toc-text">2.创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#一、单例模式"><span class="toc-text">一、单例模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、工厂方法模式"><span class="toc-text">二、工厂方法模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、抽象工厂模式"><span class="toc-text">三、抽象工厂模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、建造者模式"><span class="toc-text">四、建造者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、原型模式"><span class="toc-text">五、原型模式</span></a></li>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        设计模式之创建型
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-06-11 21:00:00</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="何谓创建型模式"><a href="#何谓创建型模式" class="headerlink" title="何谓创建型模式?"></a>何谓创建型模式?</h2><p><strong>创建型模式是处理对象创建的设计模式，试图根据实际情况使用合适的方式创建对象。创建型模式通过以某种方式控制对象的创建来解决问题。</strong></p>
+<h5 id="1-创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。"><a href="#1-创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。" class="headerlink" title="1.创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。"></a>1.创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。</h5><h5 id="2-创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。"><a href="#2-创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。" class="headerlink" title="2.创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。"></a>2.创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。</h5><h3 id="一、单例模式"><a href="#一、单例模式" class="headerlink" title="一、单例模式"></a>一、单例模式</h3><p><strong>目的：</strong>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+<p><strong>举例：</strong><br>　　在OS中，打印池(Print Spooler)是一个用于管理打印任务的应用程序，通过打印池用户可以删除、中止或者改变打印任务的优先级，在一个系统中只允许运行一个打印池对象，如果重复创建打印池则抛出异常。现使用单例模式来模拟实现打印池的设计。<br> <img src="https://i.loli.net/2019/06/12/5d00ef8b776e039846.png" alt><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package 单例模式;</span><br><span class="line"></span><br><span class="line">public class Singleton &#123;</span><br><span class="line">	private static Singleton instance;</span><br><span class="line">	Singleton() &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public Singleton GetInstance()</span><br><span class="line">	&#123;</span><br><span class="line">		if(instance == null)</span><br><span class="line">		&#123;</span><br><span class="line">			instance = new Singleton();</span><br><span class="line">		&#125;</span><br><span class="line">		return instance;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">package 单例模式;</span><br><span class="line"></span><br><span class="line">public class Client &#123;</span><br><span class="line">  public static void main(String[] args)</span><br><span class="line">  &#123;</span><br><span class="line">	  Singleton singleton = new Singleton();</span><br><span class="line">	  Singleton s1 = singleton.GetInstance();</span><br><span class="line">	  Singleton s2 = singleton.GetInstance();</span><br><span class="line">	  Singleton s3 = new Singleton();</span><br><span class="line">	  if(s1==s2)System.out.println(&quot;s1==s2&quot;);</span><br><span class="line">	  if(s1==s3)System.out.println(&quot;s1==s3&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Result: s1==s2</span><br></pre></td></tr></table></figure></p>
+<h3 id="二、工厂方法模式"><a href="#二、工厂方法模式" class="headerlink" title="二、工厂方法模式"></a>二、工厂方法模式</h3><p><strong>原理:</strong>定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//实例基类，相当于Product(为了方便，没用抽象)</span><br><span class="line">class LeiFeng</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void Sweep()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;雷锋扫地&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//学雷锋的大学生，相当于ConcreteProduct（具体产品1）</span><br><span class="line">class Student: public LeiFeng</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void Sweep()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;大学生扫地&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//学雷锋的志愿者，相当于ConcreteProduct（具体产品2）</span><br><span class="line">class Volenter: public LeiFeng</span><br><span class="line">&#123;</span><br><span class="line">public :</span><br><span class="line">    virtual void Sweep()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;志愿者&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">-----------------------------</span><br><span class="line">//工场基类Creator</span><br><span class="line">class LeiFengFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual LeiFeng* CreateLeiFeng() //返回值体现依赖关系</span><br><span class="line">    &#123;</span><br><span class="line">        return new LeiFeng();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//工场具体类1（创建大学生产品的具体工厂）</span><br><span class="line">class StudentFactory : public LeiFengFactory</span><br><span class="line">&#123;</span><br><span class="line">public :</span><br><span class="line">    virtual LeiFeng* CreateLeiFeng() //返回值体现依赖关系</span><br><span class="line">    &#123;</span><br><span class="line">        return new Student();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//工场具体类2（创建志愿者产品的具体工厂）</span><br><span class="line">class VolenterFactory : public LeiFengFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual LeiFeng* CreateLeiFeng()</span><br><span class="line">    &#123;</span><br><span class="line">        return new Volenter(); //返回值体现依赖关系</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">-----------------------------</span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    LeiFengFactory *sf=new StudentFactory(); //由客户端选创建什么产品</span><br><span class="line">    LeiFeng *s=sf-&gt;CreateLeiFeng();</span><br><span class="line">    s-&gt;Sweep();</span><br><span class="line">    delete s;</span><br><span class="line">    delete sf;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="三、抽象工厂模式"><a href="#三、抽象工厂模式" class="headerlink" title="三、抽象工厂模式"></a>三、抽象工厂模式</h3><p><strong>功能：</strong>提供一个创建一系列相关或相互依赖对象的接口,而无需指定它们具体的类。<br><strong>优缺点：</strong>遵循高内聚低耦合的设计目的，但无法避免开闭原则的倾斜性（增加新的工厂和产品族容易，增加新的产品等级结构麻烦，或反之）<br><strong>模式应用：</strong><br>　在很多软件系统中需要更换界面主题，要求界面中的按钮、文本框、背景色等一起发生改变时，可以使用抽象工厂模式进行设计。</p>
+<p><img src="https://i.loli.net/2019/06/12/5d00f0bdba47d87017.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//用户抽象接口(抽象产品A)</span><br><span class="line">class IUser</span><br><span class="line">&#123;</span><br><span class="line">public :</span><br><span class="line">    virtual void GetUser()=0;</span><br><span class="line">    virtual void InsertUser()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//部门抽象接口(抽象产品B)</span><br><span class="line">class IDepartment</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void GetDepartment()=0;</span><br><span class="line">    virtual void InsertDepartment()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//ACCESS用户（抽象产品A的产品1）</span><br><span class="line">class CAccessUser : public IUser</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void GetUser()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;Access GetUser&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void InsertUser()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;Access InsertUser&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//ACCESS部门（抽象产品B的产品1）</span><br><span class="line">class CAccessDepartment : public IDepartment</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void GetDepartment()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;Access GetDepartment&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void InsertDepartment()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;Access InsertDepartment&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//SQL用户（抽象产品A的产品2）</span><br><span class="line">class CSqlUser : public IUser</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void GetUser()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;Sql User&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void InsertUser()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;Sql User&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//SQL部门类（抽象产品B的产品2）</span><br><span class="line">class CSqlDepartment: public IDepartment</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void GetDepartment()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;sql getDepartment&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void InsertDepartment()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;sql insertdepartment&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//抽象工厂</span><br><span class="line">class IFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual IUser* CreateUser()=0;</span><br><span class="line">    virtual IDepartment* CreateDepartment()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//ACCESS工厂</span><br><span class="line">class AccessFactory : public IFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual IUser* CreateUser()</span><br><span class="line">    &#123;</span><br><span class="line">        return new  CAccessUser();</span><br><span class="line">    &#125;</span><br><span class="line">    virtual IDepartment* CreateDepartment()</span><br><span class="line">    &#123;</span><br><span class="line">        return new CAccessDepartment();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//SQL工厂</span><br><span class="line">class SqlFactory : public IFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual IUser* CreateUser()</span><br><span class="line">    &#123;</span><br><span class="line">        return new  CSqlUser();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    virtual IDepartment* CreateDepartment()</span><br><span class="line">    &#123;</span><br><span class="line">        return new CSqlDepartment();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端：</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    IFactory* factory= new SqlFactory();</span><br><span class="line">    IUser* user=factory-&gt;CreateUser();</span><br><span class="line">    IDepartment* depart = factory-&gt;CreateDepartment();</span><br><span class="line"></span><br><span class="line">    user-&gt;GetUser();</span><br><span class="line">    depart-&gt;GetDepartment();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="四、建造者模式"><a href="#四、建造者模式" class="headerlink" title="四、建造者模式"></a>四、建造者模式</h3><p><strong>功能：</strong>将一个复杂对象的构建与表示分离，使得同样的构建过程可以创建不同的表示。<br><strong>优缺点：</strong>一个指挥控制全部，可以精细的控制产品的创建过程，系统扩展方便，符合“开闭”。但产品越多越复杂，内部变多，会导致系统变复杂<br><strong>模式应用：</strong><br>很多游戏软件中，地图包括天空、地面、背景等组成部分，人物角色包括人体、服装、装备等组成部分，可以使用建造者模式对其进行设计，通过不同的具体建造者创建不同类型的地图或人物。<br><img src="https://i.loli.net/2019/06/12/5d00f251503d917985.png" alt><br><strong>举例：</strong> KFC套餐<br>套餐是一个复杂对象，一般包含主食（如汉堡、鸡肉卷等）和饮料（如果汁、 可乐等）等部分，不同的套餐有不同的组成部分，而KFC的服务员可以根据顾客的要求，一步一步装配这些组成部分，构造一份完整的套餐，然后返回给顾客。<br><img src="https://i.loli.net/2019/06/12/5d00f287de42455379.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//最终的产品类</span><br><span class="line">class Product </span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">    vector&lt;string&gt; m_product;</span><br><span class="line">public:</span><br><span class="line">    void Add(string strtemp)</span><br><span class="line">    &#123;</span><br><span class="line">        m_product.push_back(strtemp);</span><br><span class="line">    &#125;</span><br><span class="line">    void Show()</span><br><span class="line">    &#123;</span><br><span class="line">        vector&lt;string&gt;::iterator p=m_product.begin();</span><br><span class="line">        while (p!=m_product.end())</span><br><span class="line">        &#123;</span><br><span class="line">            cout&lt;&lt;*p&lt;&lt;endl;</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//建造者基类</span><br><span class="line">class Builder</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void BuilderA()=0;</span><br><span class="line">    virtual void BuilderB()=0;</span><br><span class="line">    virtual Product* GetResult()=0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//第一种建造方式</span><br><span class="line">class ConcreteBuilder1 : public Builder</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">    Product* m_product; //体现依赖关系</span><br><span class="line">public:</span><br><span class="line">    ConcreteBuilder1()</span><br><span class="line">    &#123;</span><br><span class="line">        m_product=new Product();</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void BuilderA()</span><br><span class="line">    &#123;</span><br><span class="line">        m_product-&gt;Add(&quot;one&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void BuilderB()</span><br><span class="line">    &#123;</span><br><span class="line">        m_product-&gt;Add(&quot;two&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    virtual Product* GetResult()</span><br><span class="line">    &#123;</span><br><span class="line">        return m_product;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//第二种建造方式</span><br><span class="line">class ConcreteBuilder2 : public Builder</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">    Product * m_product;  //体现依赖关系</span><br><span class="line">public:</span><br><span class="line">    ConcreteBuilder2()</span><br><span class="line">    &#123;</span><br><span class="line">        m_product=new Product();</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void BuilderA()</span><br><span class="line">    &#123;</span><br><span class="line">        m_product-&gt;Add(&quot;A&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    virtual void BuilderB()</span><br><span class="line">    &#123;</span><br><span class="line">        m_product-&gt;Add(&quot;B&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    virtual Product* GetResult()</span><br><span class="line">    &#123;</span><br><span class="line">        return m_product;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//指挥者类</span><br><span class="line">class Direct</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    void Construct(Builder* temp) //构建一个使用Builder接口的对象</span><br><span class="line">    &#123;</span><br><span class="line">        temp-&gt;BuilderA();</span><br><span class="line">        temp-&gt;BuilderB();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Direct *p=new Direct();</span><br><span class="line">    Builder* b1=new ConcreteBuilder1();</span><br><span class="line">    Builder* b2=new ConcreteBuilder2();</span><br><span class="line"></span><br><span class="line">    p-&gt;Construct(b1);                 //调用第一种建造方式</span><br><span class="line">    Product* pb1 = b1-&gt;GetResult();</span><br><span class="line">    pb1-&gt;Show();</span><br><span class="line"></span><br><span class="line">    p-&gt;Construct(b2);                 //调用第二种建造方式</span><br><span class="line">    Product * pb2 = b2-&gt;GetResult();</span><br><span class="line">    pb2-&gt;Show();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="五、原型模式"><a href="#五、原型模式" class="headerlink" title="五、原型模式"></a>五、原型模式</h3><p><strong>功能：</strong>用原型实例指定创建对象的种类，并通过拷贝这些原型创建新的对象。原型模式其实就是从一个对象创建另外一个可定制的对象，而且不需知道任何创建的细节。</p>
+<blockquote>
+<p>java java.lang.Cloneable 接口<br>c# ICloneable 接口</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/06/12/5d00f2e2e850613476.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//抽象基类</span><br><span class="line">class Prototype  </span><br><span class="line">&#123; </span><br><span class="line">private:</span><br><span class="line">    string m_strName;</span><br><span class="line"></span><br><span class="line">public: </span><br><span class="line">    Prototype(string strName)&#123; m_strName = strName; &#125;</span><br><span class="line">    Prototype() &#123; m_strName = &quot; &quot;; &#125;</span><br><span class="line">    void Show() </span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;m_strName&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    virtual Prototype* Clone() = 0 ; //关键就在于这样一个抽象方法</span><br><span class="line">&#125; ; </span><br><span class="line"></span><br><span class="line">// class ConcretePrototype1 </span><br><span class="line">class ConcretePrototype1 : public Prototype </span><br><span class="line">&#123; </span><br><span class="line">public: </span><br><span class="line">    ConcretePrototype1(string strName) : Prototype(strName)&#123;&#125;</span><br><span class="line">    ConcretePrototype1()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    virtual Prototype* Clone() </span><br><span class="line">    &#123; </span><br><span class="line">        ConcretePrototype1 *p = new ConcretePrototype1() ; </span><br><span class="line">        *p = *this ;                         //复制对象 </span><br><span class="line">        return p ; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; ; </span><br><span class="line"></span><br><span class="line">// class ConcretePrototype2 </span><br><span class="line">class ConcretePrototype2 : public Prototype </span><br><span class="line">&#123; </span><br><span class="line">public: </span><br><span class="line">    ConcretePrototype2(string strName) : Prototype(strName)&#123;&#125;</span><br><span class="line">    ConcretePrototype2()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    virtual Prototype* Clone() </span><br><span class="line">    &#123; </span><br><span class="line">        ConcretePrototype2 *p = new ConcretePrototype2() ; </span><br><span class="line">        *p = *this ; //复制对象 </span><br><span class="line">        return p ; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; ; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ConcretePrototype1* test = new ConcretePrototype1(&quot;小王&quot;);</span><br><span class="line">    ConcretePrototype2* test2 = (ConcretePrototype2*)test-&gt;Clone();</span><br><span class="line">    test-&gt;Show();</span><br><span class="line">    test2-&gt;Show();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

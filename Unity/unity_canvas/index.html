@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        unity canvas - 虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
+        </div>
+        <div class="name">
+            <i>虞启贤</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#画布（Canvas）"><span class="toc-text">画布（Canvas）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、渲染模式"><span class="toc-text">一、渲染模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Screen-Space-Overlay模式"><span class="toc-text">1.Screen Space-Overlay模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Screen-Space-Camera"><span class="toc-text">2.Screen Space-Camera</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-World-Space"><span class="toc-text">3.World Space</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TODO-Screen-Match-mode"><span class="toc-text">//TODO Screen Match mode</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        unity canvas
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-06-10 20:56:00</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#unity" title="unity">unity</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+         Canvas<a id="more"></a>
+<h2 id="画布（Canvas）"><a href="#画布（Canvas）" class="headerlink" title="画布（Canvas）"></a>画布（Canvas）</h2><p>　Canvas画布是承载所有UI元素的区域。Canvas实际上是一个游戏对象上绑定了Canvas组件。所有的UI元素都必须是Canvas的自对象。如果场景中没有画布，那么我们创建任何一个UI元素，都会自动创建画布，并且将新元素置于其下。</p>
+<h3 id="一、渲染模式"><a href="#一、渲染模式" class="headerlink" title="一、渲染模式"></a>一、渲染模式</h3><h4 id="1-Screen-Space-Overlay模式"><a href="#1-Screen-Space-Overlay模式" class="headerlink" title="1.Screen Space-Overlay模式"></a>1.Screen Space-Overlay模式</h4><p> Screen Space-Overlay（屏幕控件-覆盖模式）的画布会填满整个屏幕空间，并将画布下面的所有的UI元素置于屏幕的最上层，或者说画布的画面永远“覆盖”其他普通的3D画面，如果屏幕尺寸被改变，画布将自动改变尺寸来匹配屏幕。<br>Screen Space-Overlay模式的画布有Pixel Perfect和Sort Layer两个参数：<br>　　（1）Pixel Perfect：只有RenderMode为Screen类型时才有的选项。使UI元素像素对应，效果就是边缘清晰不模糊。<br>　　（2）Sort Layer: Sort Layer是UGUI专用的设置，用来指示画布的深度。</p>
+<h4 id="2-Screen-Space-Camera"><a href="#2-Screen-Space-Camera" class="headerlink" title="2.Screen Space-Camera"></a>2.Screen Space-Camera</h4><p> （屏幕空间-摄影机模式）和Screen Space-Overlay模式类似，画布也是填满整个屏幕空间，如果屏幕尺寸改变，画布也会自动改变尺寸来匹配屏幕。所不同的是，在该模式下，画布会被放置到摄影机前方。在这种渲染模式下，画布看起来 绘制在一个与摄影机固定距离的平面上。所有的UI元素都由该摄影机渲染，因此摄影机的设置会影响到UI画面。在此模式下，UI元素是由perspective也就是视角设定的，视角广度由Filed of View设置。</p>
+<p>　　这种模式可以用来实现在UI上显示3D模型的需求，比如很多MMO游戏中的查看人物装备的界面，可能屏幕的左侧有一个运动的3D人物，左侧是一些UI元素。通过设置Screen Space-Camera模式就可以实现上述的需求。<br>  　它比Screen Space-Overlay模式的画布多了下面几个参数：</p>
+<p>　　（1）Render Camera:渲染摄像机</p>
+<p>　　（2）Plane Distance:画布距离摄像机的距离</p>
+<p>　　（3）Sorting Layer: Sorting Layer是UGUI专用的设置，用来指示画布的深度。可以通过点击该栏的选项，在下拉菜单中点击“Add Sorting Layer”按钮进入标签和层的设置界面，或者点击导航菜单-&gt;edit-&gt;Project Settings-&gt;Tags and Layers进入该页面。</p>
+<p>　　　　可以点击“+”添加Layer，或者点击“-”删除Layer。画布所使用的Sorting Layer越排在下面，显示的优先级也就越高。</p>
+<p>　　（4）Order in Layer:在相同的Sort Layer下的画布显示先后顺序。数字越高，显示的优先级也就越高。</p>
+<h4 id="3-World-Space"><a href="#3-World-Space" class="headerlink" title="3.World Space"></a>3.World Space</h4><p> World Space即世界控件模式。在此模式下，画布被视为与场景中其他普通游戏对象性质相同的类似于一张面片（Plane）的游戏物体。画布的尺寸可以通过RectTransform设置，所有的UI元素可能位于普通3D物体的前面或者后面显示。当UI为场景的一部分时， 　　可以使用这个模式。</p>
+<p>　　它有一个单独的参数Event Camera，用来指定接受事件的摄像机，可以通过画布上的GraphicRaycaster组件发射射线产生事件。</p>
+<p>　　这种模式可以用来实现跟随人物移动的血条或者名称。<br>  我们通过下面的表格可以对比一下三种渲染模式的区别：<br><img src="https://i.loli.net/2019/06/11/5cfef0be64b0891326.png" alt></p>
+<h3 id="TODO-Screen-Match-mode"><a href="#TODO-Screen-Match-mode" class="headerlink" title="//TODO Screen Match mode"></a>//TODO Screen Match mode</h3>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        排序算法（插入、） - 虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
+        </div>
+        <div class="name">
+            <i>虞启贤</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、插入排序"><span class="toc-text">一、插入排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-是一种简单直观且稳定的排序算法。"><span class="toc-text">1.是一种简单直观且稳定的排序算法。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-原理：将每个序列分为有序序列和无序序列，每次处理就是将无序数列的第一个元素与有序数列的元素从后往前逐个进行比较，找出插入位置，将该元素插入到有序数列的合适位置中。"><span class="toc-text">2.原理：将每个序列分为有序序列和无序序列，每次处理就是将无序数列的第一个元素与有序数列的元素从后往前逐个进行比较，找出插入位置，将该元素插入到有序数列的合适位置中。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-时间复杂度为O-n2"><span class="toc-text">3.时间复杂度为O(n2)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、希尔排序"><span class="toc-text">二、希尔排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-希尔排序-Shell’s-Sort-是插入排序的一种又称“缩小增量排序”（Diminishing-Increment-Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D-L-Shell于1959年提出而得名。"><span class="toc-text">1.希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-是对插入排序的改进，在插入排序中是以1为增量让有序序列的第一个值挨个和有序序列的进行比较希尔排序额中是以d为增，d慢慢减小到1，这个过程中不断让每一次排序的所用的比较次数减少。"><span class="toc-text">2.是对插入排序的改进，在插入排序中是以1为增量让有序序列的第一个值挨个和有序序列的进行比较希尔排序额中是以d为增，d慢慢减小到1，这个过程中不断让每一次排序的所用的比较次数减少。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-希尔排序是对直接插入排序的一种优化，可以用于大型的数组，希尔排序比插入排序和选择排序要快的多，并且数组越大，优势越大。"><span class="toc-text">3.希尔排序是对直接插入排序的一种优化，可以用于大型的数组，希尔排序比插入排序和选择排序要快的多，并且数组越大，优势越大。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-时间复杂度-：O-n1-3"><span class="toc-text">4.时间复杂度 ：O(n1.3)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、冒泡排序（双向排序）-双向冒泡排序"><span class="toc-text">三、冒泡排序（双向排序）+ 双向冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#冒泡排序算法的原理如下："><span class="toc-text">冒泡排序算法的原理如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-比较相邻的元素。如果第一个比第二个大，就交换他们两个。"><span class="toc-text">1.比较相邻的元素。如果第一个比第二个大，就交换他们两个。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。"><span class="toc-text">2.对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-针对所有的元素重复以上的步骤，除了最后一个。"><span class="toc-text">3.针对所有的元素重复以上的步骤，除了最后一个。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。"><span class="toc-text">4.持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-时间复杂度O-n²"><span class="toc-text">3.时间复杂度O(n²)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、快速排序"><span class="toc-text">四、快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-时间性能：O-N-log2N"><span class="toc-text">1.时间性能：O(N*log2N)</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        排序算法（插入、）
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-06-11 08:43:11</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#数据结构" title="数据结构">数据结构</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h3 id="一、插入排序"><a href="#一、插入排序" class="headerlink" title="一、插入排序"></a>一、插入排序</h3><h4 id="1-是一种简单直观且稳定的排序算法。"><a href="#1-是一种简单直观且稳定的排序算法。" class="headerlink" title="1.是一种简单直观且稳定的排序算法。"></a>1.是一种简单直观且稳定的排序算法。</h4><h4 id="2-原理：将每个序列分为有序序列和无序序列，每次处理就是将无序数列的第一个元素与有序数列的元素从后往前逐个进行比较，找出插入位置，将该元素插入到有序数列的合适位置中。"><a href="#2-原理：将每个序列分为有序序列和无序序列，每次处理就是将无序数列的第一个元素与有序数列的元素从后往前逐个进行比较，找出插入位置，将该元素插入到有序数列的合适位置中。" class="headerlink" title="2.原理：将每个序列分为有序序列和无序序列，每次处理就是将无序数列的第一个元素与有序数列的元素从后往前逐个进行比较，找出插入位置，将该元素插入到有序数列的合适位置中。"></a>2.原理：将每个序列分为有序序列和无序序列，每次处理就是将无序数列的第一个元素与有序数列的元素从后往前逐个进行比较，找出插入位置，将该元素插入到有序数列的合适位置中。</h4><h4 id="3-时间复杂度为O-n2"><a href="#3-时间复杂度为O-n2" class="headerlink" title="3.时间复杂度为O(n2)"></a>3.时间复杂度为<strong>O(n<sup>2</sup>)</strong></h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> void InsertSort(int r[],int n)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    for(int i=2 ;i&lt;n;i++)</span><br><span class="line">    &#123;  </span><br><span class="line">        int j;</span><br><span class="line">        r[0]=r[i];     //目前无序序列的第一个数据放到r[0]</span><br><span class="line">        for(j=i-1;r[0]&lt;r[j];j--)  //从r[1]这个序列开始排序，r[0]挨个从有序序列的最后一个往前一个个比较</span><br><span class="line">        r[j+1]=r[j];</span><br><span class="line">        r[j+1] = r[0];   //比较完了，将目标数据插入到有序序列相应位置</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"> int a[11] = &#123;0,4,1,5,6,3,2,8,7,9,10&#125;;</span><br><span class="line">    InsertSort(a,11);</span><br><span class="line">    for(int i =1 ;i &lt; 11;i++)</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;&quot;  &quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <img src="https://i.loli.net/2019/06/11/5cfefbfbbf55d37847.png" alt></p>
+<h3 id="二、希尔排序"><a href="#二、希尔排序" class="headerlink" title="二、希尔排序"></a>二、希尔排序</h3><h4 id="1-希尔排序-Shell’s-Sort-是插入排序的一种又称“缩小增量排序”（Diminishing-Increment-Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D-L-Shell于1959年提出而得名。"><a href="#1-希尔排序-Shell’s-Sort-是插入排序的一种又称“缩小增量排序”（Diminishing-Increment-Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D-L-Shell于1959年提出而得名。" class="headerlink" title="1.希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。"></a>1.希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。</h4><h4 id="2-是对插入排序的改进，在插入排序中是以1为增量让有序序列的第一个值挨个和有序序列的进行比较希尔排序额中是以d为增，d慢慢减小到1，这个过程中不断让每一次排序的所用的比较次数减少。"><a href="#2-是对插入排序的改进，在插入排序中是以1为增量让有序序列的第一个值挨个和有序序列的进行比较希尔排序额中是以d为增，d慢慢减小到1，这个过程中不断让每一次排序的所用的比较次数减少。" class="headerlink" title="2.是对插入排序的改进，在插入排序中是以1为增量让有序序列的第一个值挨个和有序序列的进行比较希尔排序额中是以d为增，d慢慢减小到1，这个过程中不断让每一次排序的所用的比较次数减少。"></a>2.是对插入排序的改进，在插入排序中是以1为增量让有序序列的第一个值挨个和有序序列的进行比较希尔排序额中是以d为增，d慢慢减小到1，这个过程中不断让每一次排序的所用的比较次数减少。</h4><h4 id="3-希尔排序是对直接插入排序的一种优化，可以用于大型的数组，希尔排序比插入排序和选择排序要快的多，并且数组越大，优势越大。"><a href="#3-希尔排序是对直接插入排序的一种优化，可以用于大型的数组，希尔排序比插入排序和选择排序要快的多，并且数组越大，优势越大。" class="headerlink" title="3.希尔排序是对直接插入排序的一种优化，可以用于大型的数组，希尔排序比插入排序和选择排序要快的多，并且数组越大，优势越大。"></a>3.希尔排序是对直接插入排序的一种优化，可以用于大型的数组，希尔排序比插入排序和选择排序要快的多，并且数组越大，优势越大。</h4><h4 id="4-时间复杂度-：O-n1-3"><a href="#4-时间复杂度-：O-n1-3" class="headerlink" title="4.时间复杂度 ：O(n1.3)"></a>4.时间复杂度 ：O(n<sup>1.3</sup>)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">void HillSort(int r[],int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    for(int d=n/2 ; d&gt;=1; d=d/2)   //以d位增量来插入</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        for(i=d+1;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            r[0]=r[i];</span><br><span class="line">            for(j=i-d;j&gt;0&amp;&amp;r[0]&lt;r[j];j-=d)</span><br><span class="line">            &#123;</span><br><span class="line">                r[j+d]=r[j];</span><br><span class="line">            &#125;</span><br><span class="line">            r[j+d]=r[0];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line"> int a[11] = &#123;0,4,1,5,6,3,2,8,7,9,10&#125;;</span><br><span class="line">    HillSort(a,11);</span><br><span class="line">    for(int i =1 ;i &lt; 11;i++)</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;&quot;  &quot;;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/06/11/5cfeffef648f129548.png" alt></p>
+<h3 id="三、冒泡排序（双向排序）-双向冒泡排序"><a href="#三、冒泡排序（双向排序）-双向冒泡排序" class="headerlink" title="三、冒泡排序（双向排序）+ 双向冒泡排序"></a>三、冒泡排序（双向排序）+ 双向冒泡排序</h3><blockquote>
+<p>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。<br>它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果他们的顺序（如从大到小、首字母从A到Z）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。<br>这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</p>
+</blockquote>
+<h4 id="冒泡排序算法的原理如下："><a href="#冒泡排序算法的原理如下：" class="headerlink" title="冒泡排序算法的原理如下："></a>冒泡排序算法的原理如下：</h4><h4 id="1-比较相邻的元素。如果第一个比第二个大，就交换他们两个。"><a href="#1-比较相邻的元素。如果第一个比第二个大，就交换他们两个。" class="headerlink" title="1.比较相邻的元素。如果第一个比第二个大，就交换他们两个。"></a>1.比较相邻的元素。如果第一个比第二个大，就交换他们两个。</h4><h4 id="2-对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。"><a href="#2-对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。" class="headerlink" title="2.对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。"></a>2.对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</h4><h4 id="3-针对所有的元素重复以上的步骤，除了最后一个。"><a href="#3-针对所有的元素重复以上的步骤，除了最后一个。" class="headerlink" title="3.针对所有的元素重复以上的步骤，除了最后一个。"></a>3.针对所有的元素重复以上的步骤，除了最后一个。</h4><h4 id="4-持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。"><a href="#4-持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。" class="headerlink" title="4.持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。"></a>4.持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</h4><h4 id="3-时间复杂度O-n²"><a href="#3-时间复杂度O-n²" class="headerlink" title="3.时间复杂度O(n²)"></a>3.时间复杂度O(n²)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">void BubbleSort(int a[],int n)</span><br><span class="line">&#123;</span><br><span class="line">    int bound;</span><br><span class="line">    int exchange = n;  //有序序列第一个值为最后一个值</span><br><span class="line">    while(exchange!=0)</span><br><span class="line">    &#123;</span><br><span class="line">       bound =  exchange ;   //有序序列第一个值</span><br><span class="line">       exchange  = 0;     //exchange=0 如果下面的循环中的判断成立，也就是无序序列确实是无序，则while循环继续。</span><br><span class="line">       for(int i =0 ;i&lt;bound;i++)</span><br><span class="line">       &#123;</span><br><span class="line"></span><br><span class="line">           if(a[i]&gt;a[i+1])</span><br><span class="line">           &#123;</span><br><span class="line">               int temp = a[i];</span><br><span class="line">               a[i] = a[i+1];</span><br><span class="line">               a[i+1] = temp;</span><br><span class="line">               exchange = i ;  //for循环截至是，exchange就是有序序列的第一个值</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void DoubleBubbleSort(int a[],int n)</span><br><span class="line">&#123;</span><br><span class="line">  int low = 0,high;</span><br><span class="line">  high =n-1;</span><br><span class="line">  int lastPos;</span><br><span class="line">  while(low&lt;high)</span><br><span class="line">  &#123;</span><br><span class="line">       lastPos = high;</span><br><span class="line">       for(int i=low;i&lt;lastPos;i++)</span><br><span class="line">       &#123;</span><br><span class="line">           if(a[i]&gt;a[i+1])</span><br><span class="line">           &#123;</span><br><span class="line">               int  temp = a[i];</span><br><span class="line">               a[i]= a[i+1];</span><br><span class="line">               a[i+1] = temp;</span><br><span class="line">               high = i;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       if(high==lastPos)  //没有交换位置</span><br><span class="line">       &#123;</span><br><span class="line">           break;</span><br><span class="line">       &#125;</span><br><span class="line">       lastPos = low;</span><br><span class="line">       for(int i=high-1;i&gt;lastPos;i--)</span><br><span class="line">       &#123;</span><br><span class="line">           if(a[i]&gt;a[i+1])</span><br><span class="line">           &#123;</span><br><span class="line">               int  temp = a[i];</span><br><span class="line">               a[i]= a[i+1];</span><br><span class="line">               a[i+1] = temp;</span><br><span class="line">               low = i;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">        if(low==lastPos)  //没有交换位置</span><br><span class="line">       &#123;</span><br><span class="line">           break;</span><br><span class="line">       &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">    int a[11] = &#123;0,1,4,5,6,3,2,8,7,9,10&#125;;</span><br><span class="line">    BubbleSort(a,11);</span><br><span class="line">    cout&lt;&lt;&quot;冒泡排序: &quot;;</span><br><span class="line">    for(int i =0 ;i &lt; 11;i++)</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;&quot;  &quot;;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">     int b[11] = &#123;0,1,4,5,6,3,2,8,10,7,9&#125;;</span><br><span class="line">     DoubleBubbleSort(b,11);</span><br><span class="line">     cout&lt;&lt;&quot;双向冒泡排序：&quot;;</span><br><span class="line">      for(int i =0 ;i &lt; 11;i++)</span><br><span class="line">    cout&lt;&lt;b[i]&lt;&lt;&quot;  &quot;;</span><br><span class="line">return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/06/11/5cff018c3521a47453.png" alt></p>
+<h3 id="四、快速排序"><a href="#四、快速排序" class="headerlink" title="四、快速排序"></a>四、快速排序</h3><blockquote>
+<p>快速排序（Quicksort）是对冒泡排序的一种改进。<br>快速排序由C. A. R. Hoare在1960年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+</blockquote>
+<h4 id="1-时间性能：O-N-log2N"><a href="#1-时间性能：O-N-log2N" class="headerlink" title="1.时间性能：O(N*log2N)"></a>1.时间性能：O(N*log<sub>2</sub>N)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// Partition一次排序，每一次都找到一个轴值</span><br><span class="line">int Partition(int a[],int f,int e)</span><br><span class="line">&#123;</span><br><span class="line">    int i = f ,j=e;</span><br><span class="line">    while(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        while(i&lt;j&amp;&amp;a[i]&lt;=a[j])j--;</span><br><span class="line">        if(i&lt;j)&#123;</span><br><span class="line">            int temp = a[i];</span><br><span class="line">            a[i]=a[j];</span><br><span class="line">            a[j] =temp;</span><br><span class="line">            i++;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">         while(i&lt;j&amp;&amp;a[i]&lt;=a[j])i++;</span><br><span class="line">          if(i&lt;j)&#123;</span><br><span class="line">            int temp = a[i];</span><br><span class="line">            a[i]=a[j];</span><br><span class="line">            a[j] =temp;</span><br><span class="line">            j--;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        for(int i =0 ;i &lt; 11;i++)</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;&quot;  &quot;;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;&quot;轴值：&quot;&lt;&lt;i&lt;&lt;&quot;;  &quot;;</span><br><span class="line">      for(int i =0 ;i &lt; 11;i++)</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;&quot;  &quot;;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">        return i;</span><br><span class="line">&#125;</span><br><span class="line">//挨个找轴值，找到序列长度为1的轴值，排序就结束了</span><br><span class="line">void QuickSort(int a[],int f,int e)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    if(f&lt;e)</span><br><span class="line">    &#123;</span><br><span class="line">       int p = Partition(a,f,e);</span><br><span class="line">        QuickSort(a,f,p-1);</span><br><span class="line">    QuickSort(a,p+1,e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">int a[11] = &#123;0,4,1,5,6,3,2,8,7,9,10&#125;;</span><br><span class="line">    QuickSort(a,0,11);</span><br><span class="line">    for(int i =0 ;i &lt; 11;i++)</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;&quot;  &quot;;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/06/11/5cff06c07b8ba43218.png" alt></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
