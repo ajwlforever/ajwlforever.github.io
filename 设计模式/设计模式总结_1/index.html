@@ -56,32 +56,32 @@
             <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
-                    <span>HOME</span>
+                    <span>主页</span>
                 </a>
             </li>
             <li>
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
-                    <span>TAGS</span>
+                    <span>标签</span>
                 </a>
             </li>
             <li>
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
-                    <span>ARCHIVES</span>
+                    <span>存档</span>
                 </a>
             </li>
             <li>
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
-                    <span>ABOUT</span>
+                    <span>关于</span>
                 </a>
             </li>
             
             <li>
                 <a id="search">
                     <i class="iconfont icon-sousuo1"></i>
-                    <span>SEARCH</span>
+                    <span>搜索</span>
                 </a>
             </li>
             
@@ -100,7 +100,7 @@
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
             <input id="search-input">
-            <span id="begin-search">search</span>
+            <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
 
@@ -123,21 +123,22 @@
     </div>
 
     <div class="post-meta">
-        <span class="attr">Post：<span>2019-06-11 21:00:00</span></span>
+        <span class="attr">发布于：<span>2019-06-11 21:00:00</span></span>
         
-        <span class="attr">Tags：/
+        <span class="attr">标签：/
         
         <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
         <span>/</span>
         
         
         </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
 
     </div>
     <div class="post-content ">
-        <h2 id="何谓创建型模式"><a href="#何谓创建型模式" class="headerlink" title="何谓创建型模式?"></a>何谓创建型模式?</h2><p><strong>创建型模式是处理对象创建的设计模式，试图根据实际情况使用合适的方式创建对象。创建型模式通过以某种方式控制对象的创建来解决问题。</strong></p>
+        <p>有三个原则：单一职责，开放封闭，依赖倒转。</p>
+<h2 id="何谓创建型模式"><a href="#何谓创建型模式" class="headerlink" title="何谓创建型模式?"></a>何谓创建型模式?</h2><p><strong>创建型模式是处理对象创建的设计模式，试图根据实际情况使用合适的方式创建对象。创建型模式通过以某种方式控制对象的创建来解决问题。</strong></p>
 <h5 id="1-创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。"><a href="#1-创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。" class="headerlink" title="1.创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。"></a>1.创建型模式由两个主导思想构成。一是将系统使用的具体类封装起来，二是隐藏这些具体类的实例创建和结合的方式。</h5><h5 id="2-创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。"><a href="#2-创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。" class="headerlink" title="2.创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。"></a>2.创建型模式又分为对象创建型模式和类创建型模式。对象创建型模式处理对象的创建，类创建型模式处理类的创建。详细地说，对象创建型模式把对象创建的一部分推迟到另一个对象中，而类创建型模式将它对象的创建推迟到子类中。</h5><h3 id="一、单例模式"><a href="#一、单例模式" class="headerlink" title="一、单例模式"></a>一、单例模式</h3><p><strong>目的：</strong>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
 <p><strong>举例：</strong><br>　　在OS中，打印池(Print Spooler)是一个用于管理打印任务的应用程序，通过打印池用户可以删除、中止或者改变打印任务的优先级，在一个系统中只允许运行一个打印池对象，如果重复创建打印池则抛出异常。现使用单例模式来模拟实现打印池的设计。<br> <img src="https://i.loli.net/2019/06/12/5d00ef8b776e039846.png" alt><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package 单例模式;</span><br><span class="line"></span><br><span class="line">public class Singleton &#123;</span><br><span class="line">	private static Singleton instance;</span><br><span class="line">	Singleton() &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public Singleton GetInstance()</span><br><span class="line">	&#123;</span><br><span class="line">		if(instance == null)</span><br><span class="line">		&#123;</span><br><span class="line">			instance = new Singleton();</span><br><span class="line">		&#125;</span><br><span class="line">		return instance;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">package 单例模式;</span><br><span class="line"></span><br><span class="line">public class Client &#123;</span><br><span class="line">  public static void main(String[] args)</span><br><span class="line">  &#123;</span><br><span class="line">	  Singleton singleton = new Singleton();</span><br><span class="line">	  Singleton s1 = singleton.GetInstance();</span><br><span class="line">	  Singleton s2 = singleton.GetInstance();</span><br><span class="line">	  Singleton s3 = new Singleton();</span><br><span class="line">	  if(s1==s2)System.out.println(&quot;s1==s2&quot;);</span><br><span class="line">	  if(s1==s3)System.out.println(&quot;s1==s3&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Result: s1==s2</span><br></pre></td></tr></table></figure></p>
 <h3 id="二、工厂方法模式"><a href="#二、工厂方法模式" class="headerlink" title="二、工厂方法模式"></a>二、工厂方法模式</h3><p><strong>原理:</strong>定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//实例基类，相当于Product(为了方便，没用抽象)</span><br><span class="line">class LeiFeng</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void Sweep()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;雷锋扫地&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//学雷锋的大学生，相当于ConcreteProduct（具体产品1）</span><br><span class="line">class Student: public LeiFeng</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void Sweep()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;大学生扫地&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//学雷锋的志愿者，相当于ConcreteProduct（具体产品2）</span><br><span class="line">class Volenter: public LeiFeng</span><br><span class="line">&#123;</span><br><span class="line">public :</span><br><span class="line">    virtual void Sweep()</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;志愿者&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">-----------------------------</span><br><span class="line">//工场基类Creator</span><br><span class="line">class LeiFengFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual LeiFeng* CreateLeiFeng() //返回值体现依赖关系</span><br><span class="line">    &#123;</span><br><span class="line">        return new LeiFeng();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//工场具体类1（创建大学生产品的具体工厂）</span><br><span class="line">class StudentFactory : public LeiFengFactory</span><br><span class="line">&#123;</span><br><span class="line">public :</span><br><span class="line">    virtual LeiFeng* CreateLeiFeng() //返回值体现依赖关系</span><br><span class="line">    &#123;</span><br><span class="line">        return new Student();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//工场具体类2（创建志愿者产品的具体工厂）</span><br><span class="line">class VolenterFactory : public LeiFengFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    virtual LeiFeng* CreateLeiFeng()</span><br><span class="line">    &#123;</span><br><span class="line">        return new Volenter(); //返回值体现依赖关系</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">-----------------------------</span><br><span class="line">//客户端</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    LeiFengFactory *sf=new StudentFactory(); //由客户端选创建什么产品</span><br><span class="line">    LeiFeng *s=sf-&gt;CreateLeiFeng();</span><br><span class="line">    s-&gt;Sweep();</span><br><span class="line">    delete s;</span><br><span class="line">    delete sf;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
