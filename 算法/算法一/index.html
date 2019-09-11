@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        算法（一）递归与分治 - 虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
+        </div>
+        <div class="name">
+            <i>虞启贤</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、集合的全排列问题"><span class="toc-text">一、集合的全排列问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-递归实现全排列"><span class="toc-text">1.递归实现全排列</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#二、整数划分问题"><span class="toc-text">二、整数划分问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-只计算整数划分的数量"><span class="toc-text">1.只计算整数划分的数量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、循环赛日程表"><span class="toc-text">三、循环赛日程表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、二分搜索技术"><span class="toc-text">四、二分搜索技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、输出油管问题"><span class="toc-text">五、输出油管问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、士兵排队问题"><span class="toc-text">六、士兵排队问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、半数集问题"><span class="toc-text">七、半数集问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、集合的划分问题"><span class="toc-text">八、集合的划分问题</span></a></li>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        算法（一）递归与分治
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-09-11 20:40:00</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#算法" title="算法">算法</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="一、集合的全排列问题"><a href="#一、集合的全排列问题" class="headerlink" title="一、集合的全排列问题"></a>一、集合的全排列问题</h1><h3 id="1-递归实现全排列"><a href="#1-递归实现全排列" class="headerlink" title="1.递归实现全排列"></a>1.递归实现全排列</h3><ul>
+<li>简单的递归。</li>
+<li>11交换12交换…………….1n交换</li>
+<li>22交换23交换……2n交换</li>
+<li>…………………</li>
+<li>n-1(n-1) n(n-1)</li>
+<li>nn交换</li>
+<li>上面是所有的递归从11-nn；是第一层到最后一层</li>
+<li>递归就是从最后一层的逐个返回，一层层一个个的返回到第层(到哪一层了都是逐个返回未返回过的)。所以第一个结果是 11-22-nn 第二个结果是 11-22-(n-1)（n）…..</li>
+<li></li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">void Perm(int list[],int k,int m)</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    if(k==m)&#123;   //已经搜索到了最后</span><br><span class="line">      for(int i=0;i&lt;=m;i++)</span><br><span class="line">      &#123;   </span><br><span class="line">           cout&lt;&lt;list[i]&lt;&lt;&quot; &quot;;</span><br><span class="line">      &#125;</span><br><span class="line">     cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    else &#123;</span><br><span class="line"></span><br><span class="line">        for(int j = k ;j&lt;=m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            swap(list[k],list[j]);  //交换</span><br><span class="line">            Perm(list,k+1,m);</span><br><span class="line">            swap(list[k],list[j]);  //还原</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void swap(int *&amp;x, int *&amp;y) &#123;</span><br><span class="line">    int *temp = y;</span><br><span class="line">    y = x;</span><br><span class="line">    x = temp;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">   int list[] = &#123;1,2,3,4,5,6&#125;;</span><br><span class="line">    Perm(list,0,3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/09/10/3iRAOmbGUBsKX1Y.png" alt></p>
+</li>
+</ul>
+<h1 id="二、整数划分问题"><a href="#二、整数划分问题" class="headerlink" title="二、整数划分问题"></a>二、整数划分问题</h1><h3 id="1-只计算整数划分的数量"><a href="#1-只计算整数划分的数量" class="headerlink" title="1.只计算整数划分的数量"></a>1.只计算整数划分的数量</h3><ul>
+<li>f(n,m)表示n这个数的m划分（划分的都比m小）的数量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int Split(int n,int m)</span><br><span class="line">&#123;</span><br><span class="line">    if(n==1||m==1) return 1;   //递归到底，返回</span><br><span class="line">    else if(n&lt;m)return Split(n,n);  //n&lt;m的情况，只能划分为f(n,n)</span><br><span class="line">    else if(n==m) return Split(n,n-1)+1;  //f(n,n)的情况 直接划分，分为f(n,n-1)+1  (这一步可以和上一步合并)</span><br><span class="line">    else if(n&gt;m) return Split(n-m,m)+Split(n,m-1);  //n&gt;m 划分为 m-1和m 的划分  （其实上一步也是m和m-1的划分，但上一步属于特殊情况要算出后面那个+1，不然递归就会出错，无限递归）</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">  int a=10;</span><br><span class="line">  cout&lt;&lt;Split(a,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Result: 42</span><br></pre></td></tr></table></figure>
+<h1 id="三、循环赛日程表"><a href="#三、循环赛日程表" class="headerlink" title="三、循环赛日程表"></a>三、循环赛日程表</h1><p>  题目：设有n=2^k个运动员要进行网球循环赛。现要设计一个满足以下要求的比赛日程表：</p>
+<p> (1)每个选手必须与其他n-1个选手各赛一次；<br> (2)每个选手一天只能参赛一次；<br> (3)循环赛在n-1天内结束。</p>
+<p>请按此要求将比赛日程表设计成有n行和n-1列的一个表。在<strong>表中的第i行，第j列处填入第i个选手在第j天所遇到的选手</strong>。其中1≤i≤n，1≤j≤n-1。</p>
+<blockquote>
+<p>思路： <img src="https://i.loli.net/2019/09/11/HeIqmUidNPhwpTS.png" alt><br>     这是一个两位选手的时程表,可以看出是红线这样的排列，再看四位选手的<br>     <img src="https://i.loli.net/2019/09/11/Ep5g67XCN29fzWO.png" alt><br>     利用分治思想把n个选手分到2分之一递归进行排列（右上到左下，坐下到右上）;<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define MAX 100</span><br><span class="line">int a[MAX][MAX];</span><br><span class="line">// to是要复制到的位置，from是源位置</span><br><span class="line">void Copy(int tox,int toy,int fromx,int fromy ,int r)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 0 ; i &lt; r; i++)</span><br><span class="line">       for(int j = 0 ; j &lt; r; j++)</span><br><span class="line">       &#123;</span><br><span class="line">            a[tox+i][toy+j] = a[fromx+i][fromy+j];</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line">//构造循环赛程日列表，选手的数量是2的k次方</span><br><span class="line">void Table(int k)</span><br><span class="line">&#123;</span><br><span class="line">   int i,r ;</span><br><span class="line">    int n = 1&lt;&lt;k;  //2的k次方</span><br><span class="line">    for(int i =0 ;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a[0][i] = i+1;  //先将第一排构建出来；</span><br><span class="line">    &#125;</span><br><span class="line">    for(r=1 ; r&lt;n ; r&lt;&lt;=1)  //呈2的次方来一次次进行转移</span><br><span class="line">        for(i=0 ; i&lt;n ; i+=2*r)  //一次转移是一大块抄走，所以是2*r</span><br><span class="line">        &#123;</span><br><span class="line">           Copy(r,r+i,0,i,r);  //左上角移动到右下角</span><br><span class="line">            Copy(r,i,0,r+i,r);  //右上角移动到左下角</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"></span><br><span class="line">   Table(4);</span><br><span class="line">   for(int i=0 ; i&lt;16 ; i++)</span><br><span class="line">      &#123;</span><br><span class="line">       for(int j=0 ; j&lt;16 ; j++)</span><br><span class="line">           cout&lt;&lt;a[i][j]&lt;&lt;&quot; &quot; ;</span><br><span class="line">       cout&lt;&lt;endl;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="四、二分搜索技术"><a href="#四、二分搜索技术" class="headerlink" title="四、二分搜索技术"></a>四、二分搜索技术</h1><h1 id="五、输出油管问题"><a href="#五、输出油管问题" class="headerlink" title="五、输出油管问题"></a>五、输出油管问题</h1><p><img src="https://i.loli.net/2019/09/11/9lUkbYXLciMsyEN.png" alt=" 中位数定理:"></p>
+<blockquote>
+<p>中位数定理：给定一个数列，中位数有这样的性质 ：所有数与中位数的绝对差之和最小<br> 所以这个题就变得简单了，只是y方向的，所以直接求中位数即可，将数据排序取中位数，在计算和所有油管距离之和即是的答案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    int n;</span><br><span class="line">    int x;</span><br><span class="line">    int a[1000];</span><br><span class="line"></span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">    for(int k=0;k&lt;n;k++)</span><br><span class="line">      cin&gt;&gt;x&gt;&gt;a[k];</span><br><span class="line">    sort(a,a+n);</span><br><span class="line">    int min = 0;</span><br><span class="line">    for(int i=0;i&lt;n;i++)</span><br><span class="line">    min += (int)fabs(a[i]-a[n/2]);</span><br><span class="line">    cout&lt;&lt;min&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="六、士兵排队问题"><a href="#六、士兵排队问题" class="headerlink" title="六、士兵排队问题"></a>六、士兵排队问题</h1><p><img src="https://i.loli.net/2019/09/11/n65y7rQekMAzthX.png" alt><br>输出油管问题的升级版<br>2个轴 y轴上面和上面那个题一样<br>x轴上要到的位置是 k,k+1……k+(n-1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int n,i,x[10001],y[10001];</span><br><span class="line">  int min;</span><br><span class="line">  while(cin&gt;&gt;n)</span><br><span class="line">  &#123;</span><br><span class="line">      for(i=0;i&lt;n;i++)</span><br><span class="line">          cin&gt;&gt;x[i]&gt;&gt;y[i];</span><br><span class="line">       sort(x,x+n);</span><br><span class="line">       sort(y,y+n);</span><br><span class="line">       for(i=0;i&lt;n;i++)</span><br><span class="line">        x[i]-=i;</span><br><span class="line">        sort(x,x+n);</span><br><span class="line">       min =0;</span><br><span class="line">         cout&lt;&lt;x[n/2]&lt;&lt;&quot; &quot;&lt;&lt;y[n/2]&lt;&lt;endl;</span><br><span class="line">       for(i=0;i&lt;n;i++)</span><br><span class="line">       &#123;</span><br><span class="line">           min+=abs(x[i]-x[n/2]);</span><br><span class="line">           min+=abs(y[i]-y[n/2]);</span><br><span class="line">       &#125;</span><br><span class="line">       cout&lt;&lt;(min)&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="七、半数集问题"><a href="#七、半数集问题" class="headerlink" title="七、半数集问题"></a>七、半数集问题</h1><p><img src="https://i.loli.net/2019/09/11/dWgUiQPYHSIVJGT.png" alt></p>
+<p>这个题主要是将公式能总结出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line">int a[1001]; //存放拆过的数</span><br><span class="line"></span><br><span class="line">int Comp(int n)</span><br><span class="line">&#123;</span><br><span class="line">    int ans = 1;</span><br><span class="line"></span><br><span class="line">   if(a[n]&gt;0)return a[n];</span><br><span class="line"></span><br><span class="line">   for(int i=0 ;i&lt;n/2;i++)</span><br><span class="line">   ans+=Comp(i);   //往后递归；</span><br><span class="line">   a[n]=ans;   //存放已经计算出来的值</span><br><span class="line">   return ans;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"> int n ;</span><br><span class="line"> while(cin&gt;&gt;n)</span><br><span class="line"> &#123;</span><br><span class="line">     memset(a,0,sizeof(a));</span><br><span class="line">      a[1]=1;</span><br><span class="line">      cout&lt;&lt;Comp(n);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="八、集合的划分问题"><a href="#八、集合的划分问题" class="headerlink" title="八、集合的划分问题"></a>八、集合的划分问题</h1><p><img src="https://i.loli.net/2019/09/11/gPCjQrw5RE46tbp.png" alt></p>
+<ul>
+<li>三个数的集合划分为两个子集合， 就是2个数一个集合，1个数一个集合。</li>
+<li>n个数划分为k个集合大致上就是 </li>
+<li><p>1)若k==1，则f(n,k)=1;</p>
+<p>2)若n==m，则f(n,k)=1;</p>
+<p>3)若非以上两种情况，f(n,k)可以由下面两种情况构成</p>
+<p>  a.向n-1个元素划分成的m个集合里面添加一个新的元素，则有k*f(n-1,k)种方法；</p>
+<p>  b.向n-1个元素划分成的m-1个集合里添加一个由一个元素形成的独立的集合，则有f(n-1,k-1)种方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">long long s(int n,int k)</span><br><span class="line">&#123;</span><br><span class="line">    if((n&lt;k)||(k==0)) return 0;</span><br><span class="line">    if((k==1)||(k==n)) return 1;</span><br><span class="line">    return s(n-1,k-1)+k*s(n-1,k);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    cout&lt;&lt;s(n,k)&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
