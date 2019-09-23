@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="虞启贤">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        算法（二）动态规划 - 虞启贤的博客 | Yqx&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 虞启贤的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/1.jpg">
+        </div>
+        <div class="name">
+            <i>虞启贤</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#动态规划（Dynamic-progroming-DP）"><span class="toc-text">动态规划（Dynamic progroming,DP）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、什么是动态规划？"><span class="toc-text">一、什么是动态规划？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、设计动态规划算法的步骤"><span class="toc-text">二、设计动态规划算法的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、动态规划的特征"><span class="toc-text">三、动态规划的特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-矩阵连乘积问题"><span class="toc-text">4.1 矩阵连乘积问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法分析："><span class="toc-text">算法分析：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-最长公共子序列"><span class="toc-text">4.3 最长公共子序列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法分析"><span class="toc-text">算法分析</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 虞启贤的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        算法（二）动态规划
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-09-23 08:40:00</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#算法" title="算法">算法</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="动态规划（Dynamic-progroming-DP）"><a href="#动态规划（Dynamic-progroming-DP）" class="headerlink" title="动态规划（Dynamic progroming,DP）"></a>动态规划（Dynamic progroming,DP）</h1><h2 id="一、什么是动态规划？"><a href="#一、什么是动态规划？" class="headerlink" title="一、什么是动态规划？"></a>一、什么是动态规划？</h2><p>动态规划就是将待求解问题分解成若干个子问题，先求解子问题，然后在从这些子问题的解得到原问题的解。<br>(通常会画一个矩阵。。。)</p>
+<h2 id="二、设计动态规划算法的步骤"><a href="#二、设计动态规划算法的步骤" class="headerlink" title="二、设计动态规划算法的步骤"></a>二、设计动态规划算法的步骤</h2><p>(1). 找出最优解的性质，并刻画其结构特征<br>(2). 递归的定义最优值<br>(3). 从底向上计算出最优值</p>
+<h2 id="三、动态规划的特征"><a href="#三、动态规划的特征" class="headerlink" title="三、动态规划的特征"></a>三、动态规划的特征</h2><h3 id="4-1-矩阵连乘积问题"><a href="#4-1-矩阵连乘积问题" class="headerlink" title="4.1 矩阵连乘积问题"></a>4.1 矩阵连乘积问题</h3><p>题目:给定n个矩阵{A1,A2,A3,……,An}，其中Ai与A(i+1)是可乘的，i=1,2,3,……,n-1。考察这n个矩阵的连乘积A1,A2,A3,……,An。<br>具体例子书上有 P78</p>
+<ul>
+<li>A1是50*10  A2是10*40 A3是40*30 A430*5</li>
+<li>A1*A3d的运算次数就是 50*30  </li>
+<li>考虑这四个的排列</li>
+</ul>
+<h4 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h4><p>完全加括号的矩阵连乘积可递归地定义为：</p>
+<pre><code>（1）单个矩阵是完全加括号的；
+
+（2）矩阵连乘积A是完全加括号的，则A可表示为2个完全加括号的矩阵连乘积B和C的乘积并加括号，即A=(BC)
+
+   例如，矩阵连乘积A1A2A3A4有5种不同的完全加括号的方式：(A1(A2(A3A4)))，(A1((A2A3)A4))，((A1A2)(A3A4))，((A1(A2A3))A4)，(((A1A2)A3)A4)。每一种完全加括号的方式对应于一个矩阵连乘积的计算次序，这决定着作乘积所需要的计算量。
+
+  看下面一个例子，计算三个矩阵连乘{A1，A2，A3}；维数分别为10*100 , 100*5 , 5*50 按此顺序计算需要的次数((A1*A2)*A3):10X100X5+10X5X50=7500次，按此顺序计算需要的次数(A1*(A2*A3)):10*5*50+10*100*50=52500次
+
+  所以问题是：如何确定运算顺序，可以使计算量达到最小化。      
+</code></pre><p>————————————————</p>
+<p> m[i][j]是矩阵i到矩阵j的最小次数 （动态规划就是分解成子问题） ，所有可以看成 m[i][k]+m[k][j]+p[i-1]\p[k]\p[j]<br> 然后就和书上的那个图是一样的了。<br> <img src="https://i.loli.net/2019/09/23/URO1MNHzy3AIB2t.png" alt></p>
+<ol>
+<li>穷举法</li>
+</ol>
+<p>画出m[i][j]的方阵<br><img src="https://i.loli.net/2019/09/23/BfKLml6Av8Q3VhH.png" alt><br>根据方阵，我们可以看出更具上面那个方程，矩阵下半部分是不用放数据的，因为 i&lt;=j<br>然后看 i&lt;j的时候， 找中间值（子问题） 那就一定有k&lt;j，所有可以一条对角线一条对角线的算。<br>第i条对角线的某个值就从 第一条对角线找起。这样m[i][j]就会都是i-j的最小值</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define NUM 51</span><br><span class="line">int p[NUM];</span><br><span class="line">int m[NUM][NUM];</span><br><span class="line">int s[NUM][NUM];</span><br><span class="line"></span><br><span class="line">void MatrixChain(int n)</span><br><span class="line">&#123;</span><br><span class="line"> for(int i=1; i&lt;=n;i++) m[i][i] = 0;  //第一条对角线全是0</span><br><span class="line"></span><br><span class="line"> for(int r=2 ; r&lt;=n ; r++)  //从第2条对角线开始计算</span><br><span class="line"> for(int i=1 ; i&lt;=n-r+1;i++)   //第r条对角线的i</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            int j = i+r-1; //第r条对角线的j</span><br><span class="line">            m[i][j] = m[i+1][j]+p[i-1]*p[i]*p[j];  //初始化m[i][j],从i处断开</span><br><span class="line">            s[i][j] = i;</span><br><span class="line">            for(int k = i+1 ; k&lt;j;k++)</span><br><span class="line">            &#123;</span><br><span class="line">                int t = m[i][k] + m[k+1][j] + p[i-1]*p[k]*p[j];//动态规划方程计算   核心代码</span><br><span class="line">                if(t&lt;m[i][j])&#123;m[i][j]=t;s[i][j]=k;&#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line"> //memset(m,0,sizeof(m));</span><br><span class="line"> //memset(s,0,sizeof(s));</span><br><span class="line">  int n = 6;</span><br><span class="line">  p[0]=50;</span><br><span class="line">  p[1]=10;</span><br><span class="line">  p[2]=40;</span><br><span class="line">  p[3]=30;</span><br><span class="line">  p[4]=5;</span><br><span class="line">  p[5]=20;</span><br><span class="line">  p[6]=15;</span><br><span class="line"> MatrixChain(n);</span><br><span class="line">for(int i = 1; i&lt;=n ;i++)</span><br><span class="line">  &#123;</span><br><span class="line">      for(int j = 1; j&lt;=n ;j++)</span><br><span class="line">      &#123;</span><br><span class="line">      if(i&lt;j)</span><br><span class="line">      cout&lt;&lt;m[i][j]&lt;&lt;&quot; &quot;;</span><br><span class="line">      else cout&lt;&lt;0&lt;&lt;&quot; &quot;;</span><br><span class="line">      &#125;</span><br><span class="line">      cout&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  cout&lt;&lt;m[1][2]&lt;&lt;endl;</span><br><span class="line">  cout&lt;&lt;m[1][6]&lt;&lt;endl;</span><br><span class="line">  cout&lt;&lt;s[1][6]&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>2 递推法  （和上面的公式是一样的，只不过在写程序方面用的是递归法）
+</code></pre><p>  画括号:<br> <img src="https://i.loli.net/2019/09/23/zSHYNPZstF9MQOp.png" alt></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">//3d1-1 重叠子问题的递归最优解</span><br><span class="line">//A1 30*35 A2 35*15 A3 15*5 A4 5*10 A5 10*20 A6 20*25</span><br><span class="line">//p[0-6]=&#123;30,35,15,5,10,20,25&#125;</span><br><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include &lt;iostream&gt; </span><br><span class="line">using namespace std; </span><br><span class="line"> </span><br><span class="line">const int L = 7;</span><br><span class="line"> </span><br><span class="line">int RecurMatrixChain(int i,int j,int **s,int *p);//递归求最优解</span><br><span class="line">void Traceback(int i,int j,int **s);//构造最优解</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int p[L]=&#123;30,35,15,5,10,20,25&#125;;</span><br><span class="line"> </span><br><span class="line">    int **s = new int *[L];</span><br><span class="line">	for(int i=0;i&lt;L;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">		s[i] = new int[L];  </span><br><span class="line">    &#125; </span><br><span class="line"> </span><br><span class="line">	cout&lt;&lt;&quot;矩阵的最少计算次数为：&quot;&lt;&lt;RecurMatrixChain(1,6,s,p)&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;&quot;矩阵最优计算次序为：&quot;&lt;&lt;endl;</span><br><span class="line">	Traceback(1,6,s);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int RecurMatrixChain(int i,int j,int **s,int *p)</span><br><span class="line">&#123;</span><br><span class="line">	if(i==j) return 0;</span><br><span class="line">	int u = RecurMatrixChain(i,i,s,p)+RecurMatrixChain(i+1,j,s,p)+p[i-1]*p[i]*p[j];</span><br><span class="line">	s[i][j] = i;</span><br><span class="line"> </span><br><span class="line">	for(int k=i+1; k&lt;j; k++)</span><br><span class="line">	&#123;</span><br><span class="line">		int t = RecurMatrixChain(i,k,s,p) + RecurMatrixChain(k+1,j,s,p) + p[i-1]*p[k]*p[j];</span><br><span class="line">		if(t&lt;u)</span><br><span class="line">		&#123;</span><br><span class="line">			u=t;</span><br><span class="line">			s[i][j]=k;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return u;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void Traceback(int i,int j,int **s)</span><br><span class="line">&#123;</span><br><span class="line">	if(i==j) return;</span><br><span class="line">	Traceback(i,s[i][j],s);</span><br><span class="line">	Traceback(s[i][j]+1,j,s);</span><br><span class="line">	cout&lt;&lt;&quot;Multiply A&quot;&lt;&lt;i&lt;&lt;&quot;,&quot;&lt;&lt;s[i][j];</span><br><span class="line">	cout&lt;&lt;&quot; and A&quot;&lt;&lt;(s[i][j]+1)&lt;&lt;&quot;,&quot;&lt;&lt;j&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-最长公共子序列"><a href="#4-3-最长公共子序列" class="headerlink" title="4.3 最长公共子序列"></a>4.3 最长公共子序列</h3><p>问题：给定两个字符串，求解这两个字符串的最长公共子序列（Longest Common Sequence）。比如字符串1：BDCABA；字符串2：ABCBDAB</p>
+<p>则这两个字符串的最长公共子序列长度为4，最长公共子序列是：BCBA</p>
+<h4 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h4><p>两个序列进行比较因为这个不是对等的比较，那就只能枚举了。</p>
+<p>把这个问题分解成子问题，用c[i][j]表示 A序列的i到B序列的j的最长公共子序列</p>
+<p><strong>c[i][j]从c[1][1]开始讨论。<br>c[0][0] = 0 ;<br>若A[i]==B[j]  那么 c[i][j] = c[i-1][j-1]+1<br>若A[i]!=B[j]  那么 c[i][j] = max{c[i-1][j],c[i][j-1]}<br>核心方程get，那么接下来考虑怎么样去循环计算，确保上一个子问题是解决的。<br>根据这两个式子，都是i-1，j-1 那直接双重循环即可
+</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define NUM 100</span><br><span class="line">int c[NUM][NUM];</span><br><span class="line">int b[NUM][NUM]; //记录路径</span><br><span class="line"></span><br><span class="line">void LCSLength (int m,int n ,char A[],char B[])</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    //将第0行，第0列归0</span><br><span class="line">    for(i=0 ; i&lt;m ;i++)&#123; c[i][0] = 0; cout&lt;&lt;A[i];&#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">     for(i=0 ; i&lt;n ;i++)&#123; c[0][i] = 0;cout&lt;&lt;B[i];&#125;</span><br><span class="line">   cout&lt;&lt;endl;</span><br><span class="line">     //直接双重循环递归</span><br><span class="line">     for(i=1; i&lt;= m;i++)</span><br><span class="line">     for(j=1; j&lt;= n;j++)</span><br><span class="line">     &#123;</span><br><span class="line">         cout&lt;&lt;&quot;A[&quot;&lt;&lt;i&lt;&lt;&quot;-1]:&quot;&lt;&lt;A[i-1]&lt;&lt;&quot; B[&quot;&lt;&lt;j&lt;&lt;&quot;-1]:&quot;&lt;&lt;B[j-1]&lt;&lt;endl;</span><br><span class="line">         if(A[i-1]==B[j-1])</span><br><span class="line">        &#123;</span><br><span class="line">           c[i][j] = c[i-1][j-1]+1;</span><br><span class="line">           b[i][j] = 1;</span><br><span class="line">        &#125;</span><br><span class="line">         else</span><br><span class="line">         if(c[i-1][j]&gt;=c[i][j-1])</span><br><span class="line">         &#123;</span><br><span class="line">           c[i][j]=c[i-1][j];</span><br><span class="line">              b[i][j] = 2;</span><br><span class="line">         &#125;else &#123;</span><br><span class="line">              c[i][j]=c[i][j-1];</span><br><span class="line">              b[i][j] = 3;</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    char A[] = &#123;&apos;B&apos;,&apos;D&apos;,&apos;C&apos;,&apos;A&apos;,&apos;B&apos;,&apos;A&apos;&#125;;</span><br><span class="line">    char B[] = &#123;&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;B&apos;,&apos;D&apos;,&apos;A&apos;,&apos;B&apos;&#125;;</span><br><span class="line">    int m = 6;</span><br><span class="line">    int n = 7;</span><br><span class="line">    LCSLength(m,n,A,B);</span><br><span class="line">    cout&lt;&lt;c[5][6]&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">  for(int i=0; i&lt;= m;i++)</span><br><span class="line">   &#123;</span><br><span class="line"></span><br><span class="line">    for(int j=0; j&lt;= n;j++)</span><br><span class="line">     &#123;</span><br><span class="line">         cout&lt;&lt;c[i][j]&lt;&lt;&quot; &quot;;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line">     cout&lt;&lt;endl;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">  for(int i=0; i&lt;= m;i++)</span><br><span class="line">   &#123;</span><br><span class="line"></span><br><span class="line">    for(int j=0; j&lt;= n;j++)</span><br><span class="line">     &#123;</span><br><span class="line">         cout&lt;&lt;b[i][j]&lt;&lt;&quot; &quot;;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line">     cout&lt;&lt;endl;</span><br><span class="line">   &#125;</span><br><span class="line">     return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/09/23/if4zmB6ynUhJg9O.png" alt></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/ajwlforever">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://dev.tencent.com">tencent</a></span>
+        <span>/</span>
+        
+        <span><a href="www.yqxblog.top">Yqx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
